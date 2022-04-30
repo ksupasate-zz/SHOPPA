@@ -1,0 +1,78 @@
+.main {
+  clear: both;
+  padding: 2%;
+  background: linear-gradient(#e1e1ff ,white);
+  height: 10rem; 
+  /* background: linear-gradient(180deg, #EBEBFA 0%, rgba(235, 235, 250, 0.869792) 52.08%, rgba(235, 235, 250, 0) 100%); */
+  
+}
+
+.topleft {
+  padding-left: 5%;
+  margin: 0;
+  float: left;
+}
+
+
+.btleft {
+  padding-left: 5%;
+  opacity: 0.5;
+  top: -55px; 
+  display: inline-flex; 
+  position: relative;
+  clear: both;
+  float: left;
+}
+
+.space {
+  margin: 10px;
+}
+
+.comment1
+{
+  clear: both;
+  padding-right: 5%;
+}
+
+.image {
+  transform: scaleX(-1);
+  height: 330px;
+  width: 600px;
+  object-fit: cover;
+  position: relative;
+  overflow: auto;
+  box-sizing: inherit;
+}
+
+.right {
+  float: right;
+  display: block;
+  clear: right;
+}
+
+.profile{
+  margin-top: 20px;
+  margin-right: 200px;
+  float: right;
+  width: 200px;
+  height: 160px;
+  border: 5px solid black;
+  margin-bottom:25px;
+}
+
+.description {
+  font-weight: bold;
+}
+
+.desbox {
+  width: 280px;
+  height: 190px;
+  overflow-y: scroll;
+  clear: both;
+}
+
+.linedes {
+  clear: both;
+  width: 70%;
+  transform: translateX(-22%);
+}
