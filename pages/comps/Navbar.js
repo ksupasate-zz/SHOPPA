@@ -1,7 +1,6 @@
 import React from 'react'
 import { Nav } from 'react-bootstrap'
 import Link from 'next/link'
-import { AccessAlarm, ThreeDRotation } from '@mui/icons-material'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
@@ -30,8 +29,8 @@ export default function Navbar() {
                 .w-25:nth-child(3){
                     text-align : left ;
                 }
-                navbar-brand{
-                    font-weight : 600 ;
+                .navbar-brand{
+                    font-weight : 700 ;
                 }
         `}</style>
         <div className='w-50'>
