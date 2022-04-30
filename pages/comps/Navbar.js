@@ -31,7 +31,7 @@ export default function Navbar() {
                     text-align : left ;
                 }
                 .navbar-brand{
-                    font-weight : 600 ;
+                    font-weight : 700 ;
                 }
         `}</style>
         <div className='w-50'>
