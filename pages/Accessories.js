@@ -1,11 +1,11 @@
 import React from 'react'
 import Navbar from './comps/Navbar';
 
-export default function Apparel() {
+export default function Accessories() {
     return (
         <div>
             <Navbar />
-            <h1>Apparel</h1>
+            <h1>Accessories</h1>
         </div>
     );
 }
