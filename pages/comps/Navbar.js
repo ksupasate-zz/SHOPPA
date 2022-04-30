@@ -30,7 +30,7 @@ export default function Navbar() {
                 .w-25:nth-child(3){
                     text-align : left ;
                 }
-                navbar-brand{
+                .navbar-brand{
                     font-weight : 600 ;
                 }
         `}</style>
