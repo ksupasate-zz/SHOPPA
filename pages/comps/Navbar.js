@@ -14,14 +14,6 @@ export default function Navbar() {
             </Link>
         </div>
         <style jsx>{`
-                .w-25{
-                    width : 25%;
-                    float : left;
-                }
-                .w-50{
-                    width : 50%;
-                    float : left;
-                }
                 .navbar-brand {
                     line-height: 44px;
                 }
