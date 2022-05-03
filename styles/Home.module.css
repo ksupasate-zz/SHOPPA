@@ -1,5 +1,102 @@
+
+.main{
+  padding:1%;
+}
 .container {
   padding: 0 2rem;
+}
+
+.border12 {
+  border-radius: 8px;
+}
+
+.p1 {
+  padding-right: 130px;
+}
+
+.p2 {
+  padding-right: 180px;
+}
+
+a.hidestatus {
+  display: none;
+}
+
+.Membermargin {
+  padding-top:10px ;
+  margin-left: 260px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.Favyear {
+
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+.Favmargin1 {
+
+  display: inline-block
+}
+
+.margin123 {
+  padding-top: 10px;
+  margin-left:240px;
+}
+
+.status {
+
+  border-radius: 8px;
+  background-color: #D1D1F2;
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  color: white;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+.Table123 {
+  border-radius: 20px;
+  background-color: blu;
+}
+
+.status1 {
+
+  border-radius: 8px;
+  background-color: #F2D1E1;
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  color: white;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+.space1 {
+  display: inline;
+  margin-right: 15px;
+}
+
+.space2 {
+  display: inline;
+  margin-left: 15px;
+}
+
+.even {
+  background-color: #E9E9FF;
+}
+
+.odd {
+  background-color: white;
 }
 
 .main {
