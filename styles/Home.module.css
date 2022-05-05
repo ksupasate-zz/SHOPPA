@@ -124,6 +124,7 @@
   position: relative;
   font-weight: bold;
   text-align: center;
+  color:#000;
 }
 
 .val:hover {
@@ -175,6 +176,114 @@
   height: auto;
   display: inline-block;
   vertical-align: middle;
+}
+
+/* Main */
+.contentStyle {
+  height: 390px;
+  color: #fff;
+  text-align: center;
+  background: #364d79;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slide {
+  height: 400px;
+  width: 85%;
+  margin: 0 auto;
+  object-fit: fill;
+}
+
+.contentStyle img{
+  width: 100%;
+  position: relative;
+}
+
+.new {
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  width: 100%;
+}
+
+.card {
+  display:inline-block;
+  margin-left: 6.55%;
+  margin-right: 6.55%;
+  width: 33%;
+}
+
+.view {
+  border-radius: 50px;
+  width: 160px;
+  height: 60px;
+  background-color: #fff;
+  font-weight: bold;
+  font-size: large;
+  border-width: 3px;
+  margin-top: 1%;
+  
+}
+
+.view:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.our {
+  width: 450px;
+  height: 500px;
+  display: inline-block;
+  overflow: hidden;
+  object-fit: cover;
+  position: relative;
+  margin-left: 9.85%;
+  margin-right: 9.85%;
+  border-radius: 20px;
+}
+
+.our > a {
+  opacity: 60%;
+  
+}
+
+.center {
+  font-size: 2rem;
+  font-weight: bolder;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center:hover {
+  cursor: none;
+}
+
+.our:hover, .cate:hover {
+  box-shadow: 0 0 3px black;
+}
+
+.cate {
+  width: 350px;
+  height: 300px;
+  display: inline-block;
+  overflow: hidden;
+  object-fit: cover;
+  position: relative;
+  margin-left: 4.91%;
+  margin-right: 4.91%;
+  margin-top: 8%;
+  border-radius: 5px;
+}
+
+.cate > a {
+  opacity: 60%;
+  top: -50%;
+  left: -50%;
+  position: relative;
+  object-fit: fill;
 }
 
 

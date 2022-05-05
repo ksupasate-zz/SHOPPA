@@ -22,7 +22,7 @@ export function plus() {
 
 export function minus() {
   clicks--;
-  // clicks = (clicks < 10) ? "0" + clicks : clicks;
+  clicks = (clicks <= 0) ? 0 : clicks;
   document.getElementById("clicks").innerHTML = clicks;
 }
 
