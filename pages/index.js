@@ -1,23 +1,13 @@
 
 import * as React from 'react';
-import { Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Image, Avatar, ArrowBacklosIcon, ArrowForwardlosIcon } from '@mui/material';
+import { Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Avatar} from '@mui/material';
+import { Pagination, PaginationItem, Stack, TablePagination} from '@mui/material';
 import UI from '@mui/material';
 import styles from '../styles/Home.module.css'
 import Op from '../component/button'
-import { borders } from '@mui/system';
-import Pagination from '@mui/material/Pagination';
-import PaginationItem from '@mui/material/PaginationItem';
-import Stack from '@mui/material/Stack';
-import { DataGrid } from '@mui/x-data-grid';
-import TablePagination from '@mui/material/TablePagination';
-import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Nav from '../component/Navbar'
 import { Main } from 'next/document';
 
-
-const rows = [
-  
-];
 export default function TableBan() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);

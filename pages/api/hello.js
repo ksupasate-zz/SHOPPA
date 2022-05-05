@@ -4,6 +4,7 @@ const cors = require('cors');
 const mysql = require('mysql2');
 app.use(cors());
 app.use(express.json());
+
 const dotenv=require('dotenv');
 dotenv.config();
 
@@ -20,7 +21,6 @@ db.connect((err) =>{
     }
     console.log('MySQL Connected');
 });
-
 app.get('/Members',(req,res)=>{
     db.query("SELECT Member_FName,Member_LName,Member_Telephone,Member_Email,Member_BanStatus FROM Members ",(err,result)=>{
         if(err){
@@ -30,7 +30,6 @@ app.get('/Members',(req,res)=>{
     }
     });
 })
-
 app.listen('3001',()=>{
     console.log('Server running on port 3001');
 })

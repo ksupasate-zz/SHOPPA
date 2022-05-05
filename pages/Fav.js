@@ -1,12 +1,7 @@
 import * as React from 'react';
-import { Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Image, Avatar, ArrowBacklosIcon, ArrowForwardlosIcon } from '@mui/material';
-import { Box, InputLabel, FormControl, NativeSelect } from '@mui/material';
+import { Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Image, Avatar } from '@mui/material';
 import UI from '@mui/material';
 import styles from '../styles/Home.module.css'
-import Op from '../component/button'
-import { borders } from '@mui/system';
-import Pagination from '@mui/material/Pagination';
-import PaginationItem from '@mui/material/PaginationItem';
 import Stack from '@mui/material/Stack';
 import Sy from '../component/selectyear'
 import Sm from '../component/selectmonth'
@@ -38,7 +33,7 @@ export default function TableFav() {
           </Stack>
           <br />
           <Container align="center" className={styles.margin123} >
-            <TableContainer component={Paper} sx={{ minWidth: 1500, borderRadius: '16px' }}  >
+            <TableContainer component={Paper} sx={{ minWidth: 1300, borderRadius: '16px' }}  >
               <Table size="small" aria-label="customized table">
                 <TableBody >
                   {rows.map((row, i) => (
