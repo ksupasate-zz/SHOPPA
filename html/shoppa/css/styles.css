@@ -1,0 +1,104 @@
+body{
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+tr{
+  text-align: left;
+}
+
+.table{
+  border-bottom: 1px solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+th{
+  border-top: 3px solid;
+  border-bottom: 3px solid;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+h4,h3{
+  float: left;
+  padding-bottom: 15px;
+}
+
+
+.right{
+  text-align: right;
+}
+
+.hr-big{
+  border-style: none;
+  border-top: 5px solid;
+  clear: left;
+}
+
+.hr-med{
+  border-style: none;
+  border-top: 3px solid;
+  clear: left;
+}
+
+.hr-small{
+    border-style: none;
+  border-top: 1px solid;
+  clear: left;
+}
+
+.hr-invis{
+  border-style: none;
+  clear: left;
+}
+
+
+.half-left-div{
+  width: 48%;
+  float: left;
+  margin-right: 2%;
+  word-wrap: break-word;
+  position: relative;
+  height: auto;
+}
+
+.half-right-div{
+  width: 48%;
+  float: left;
+  word-wrap: break-word;
+  margin-left: 2%
+}
+
+.bottom-div{
+  clear: left;
+}
+
+.DESCRIPTION{
+  text-align: center;
+}
+
+.mid{
+  text-align: center;
+}
+
+.info{
+  width: 100%;
+  position: relative;
+}
+.puthfix{
+  width: 38%;
+  float: left;
+  position: relative;
+  margin: auto;
+}
+
+.right{
+
+}
+
+.nineteen{
+  width: 90%;
+  align: right;
+}
+
