@@ -6,17 +6,17 @@ import Stack from '@mui/material/Stack';
 import Sy from '../component/selectyear'
 import Sm from '../component/selectmonth'
 import Nav from '../component/Navbar';
-function createData(Num, Cate, Image, Like) {
-  return { Num, Cate, Image, Like };
-}
-const rows = [
-  createData('1', 'Shoes', 'Shoes.png', '5230 Likes',),
-  createData('2', 'Apparel', 'Apparel.png', '4750 Likes',),
-  createData('3', 'Bags', 'Bags.png', '4583 Likes',),
-  createData('4', 'Accessories', 'Acces.png', '3200 Likes',),
-  createData('5', 'Collectibles', 'Collec.png', '2967 Likes',),
-];
+
+
 export default function TableFav() {
+  const [rows, setrows] = React.useState([]);
+  React.useEffect(() => {
+    fetch('/api/Favlist')
+      .then((res) => res.json())
+      .then((result) => {
+        setrows(result)
+      })
+  }, [])
   return (
     <main >
       <Stack sx={{ p: 4 }}>
@@ -33,7 +33,7 @@ export default function TableFav() {
           </Stack>
           <br />
           <Container align="center" className={styles.margin123} >
-            <TableContainer component={Paper} sx={{ minWidth: 1300, borderRadius: '16px' }}  >
+            <TableContainer component={Paper} sx={{ minWidth: 700, borderRadius: '16px' }}  >
               <Table size="small" aria-label="customized table">
                 <TableBody >
                   {rows.map((row, i) => (
@@ -45,12 +45,10 @@ export default function TableFav() {
                       }}
                     >
                       <TableCell component="th" scope="row">
-                        {row.Num}
+                        {i+1}
                       </TableCell>
-                      <TableCell align="left">{row.Cate}</TableCell>
-                      <TableCell align="left">
-                        <Avatar variant="square" src={row.Image} sx={{ width: 50, height: 50 }} /></TableCell>
-                      <TableCell align="center">{row.Like}</TableCell>
+                      <TableCell align="center">{row.Category_Name}</TableCell>
+                      <TableCell align="center">{row.countCate}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
