@@ -32,8 +32,8 @@ export default function TableFav() {
             <div className={styles.Favyear}>Month: </div> <Sm />
           </Stack>
           <br />
-          <Container align="center" className={styles.margin123} >
-            <TableContainer component={Paper} sx={{ minWidth: 700, borderRadius: '16px' }}  >
+          <Container align="center" className={styles.marginFav} >
+            <TableContainer component={Paper} sx={{ maxWidth: 1000, borderRadius: '16px' }}  >
               <Table size="small" aria-label="customized table">
                 <TableBody >
                   {rows.map((row, i) => (
@@ -48,7 +48,7 @@ export default function TableFav() {
                         {i+1}
                       </TableCell>
                       <TableCell align="center">{row.Category_Name}</TableCell>
-                      <TableCell align="center">{row.countCate}</TableCell>
+                      <TableCell align="center">{row.countCate+' Likes'}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
