@@ -211,6 +211,7 @@
   display:inline-block;
   margin-left: 6.55%;
   margin-right: 6.55%;
+  margin-bottom: 2%;
   width: 33%;
 }
 
@@ -284,6 +285,13 @@
   left: -50%;
   position: relative;
   object-fit: fill;
+}
+
+.catename {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
 }
 
 
