@@ -1,36 +1,41 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Stack from '@mui/material/Stack';
-import IconButton from '@mui/material/IconButton';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import styles from '../styles/Home.module.css'
-import { ClassNames } from '@emotion/react';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
-import Link from "next/link";
+import React from 'react';
+import Button from '@mui/material/Button';
+import { SnackbarProvider, useSnackbar } from 'notistack';
+import { styled } from '@mui/material/styles';
+import { deepPurple, purple } from '@mui/material/colors';
 
-export default function Image123() {
-    return (
-        <div >
-            <div className={styles.space1} >
+function MyApp() {
+  const { enqueueSnackbar } = useSnackbar();
 
-                <IconButton aria-label="VisibilityIcon" >
-                <Link href="/Profile">
-                    <VisibilityIcon />
-                    </Link>
-                </IconButton>
-            </div>
+  const handleClick = () => {
+    enqueueSnackbar('I love snacks.');
+  };
 
-            <IconButton aria-label="EditIconn">
-                    <EditIcon />
-                </IconButton>
+  const handleClickVariant = (variant) => () => {
+    // variant could be success, error, warning, info, or default
+    enqueueSnackbar('This product has been added to cart', { variant });
+  };
 
-            <div className={styles.space2}>
-            <IconButton aria-label="DeleteIcon">
-                    <DeleteIcon />
-                </IconButton>
-            </div>
-
-        </div>
-    )
+  return (
+    <React.Fragment>
+      <ColorButton variant="contained" onClick={handleClickVariant('success')}>Add to Cart</ColorButton>
+    </React.Fragment>
+  );
 }
+
+export default function IntegrationNotistack() {
+  return (
+    <SnackbarProvider maxSnack={3}>
+      <MyApp />
+    </SnackbarProvider>
+  );
+}
+
+
+const ColorButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(deepPurple[500]),
+  backgroundColor: deepPurple[100],
+  '&:hover': {
+    backgroundColor: deepPurple[500],
+  },
+}));

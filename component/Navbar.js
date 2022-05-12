@@ -4,23 +4,16 @@ import Link from "next/link";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+
 export default function Navbar() {
   return (
-    <Nav className="nav justify-content-center text-center mb-3 mt-3">
+    <Nav className="nav justify-content-center text-center mb-5 mt-3">
       <div className="w-25">
         <Link href="/">
           <a className="navbar-brand text-black">S H O P P A</a>
         </Link>
       </div>
       <style jsx>{`
-        .w-25 {
-          width: 25%;
-          float: left;
-        }
-        .w-50 {
-          width: 50%;
-          float: left;
-        }
         .navbar-brand {
           line-height: 44px;
         }
@@ -30,29 +23,61 @@ export default function Navbar() {
         li {
           text-align: center;
         }
-        .w-25 {
-          text-align: center;
-        }
-        .w-25:nth-child(3) {
-          text-align: center;
-        }
         .navbar-brand {
           font-weight: 650;
           font-size: 25px;
         }
       `}</style>
       <div className="w-50">
+        <li className="list-inline-item">
+          <Link href="/Shoes">
+            <a className="nav-link text-black">Shoes</a>
+          </Link>
+        </li>
+
+        <li className="list-inline-item">
+          <Link href="/Collectibles">
+            <a className="nav-link text-black">Collectibles</a>
+          </Link>
+        </li>
+
+        <li className="list-inline-item">
+          <Link href="/Apparel">
+            <a className="nav-link text-black">Apparel</a>
+          </Link>
+        </li>
+
+        <li className="list-inline-item">
+          <Link href="/Bags">
+            <a className="nav-link text-black">Bags</a>
+          </Link>
+        </li>
+
+        <li className=" list-inline-item">
+          <Link href="/Accessories">
+            <a className="nav-link text-black">Accessories</a>
+          </Link>
+        </li>
       </div>
       <div className="w-25">
-      <li className="list-inline-item">
-          <Link href="/Profile">
+        <li className=" list-inline-item">
+          <Link href="/Accessories">
             <a className="nav-link text-black">
-              <div>Narith Thanomsup</div>
+              <ShoppingCartOutlinedIcon />
             </a>
           </Link>
         </li>
+
         <li className="list-inline-item">
-          <Link href="/Profile">
+          <Link href="/Accessories">
+            <a className="nav-link text-black">
+              <FavoriteBorderOutlinedIcon />
+            </a>
+          </Link>
+        </li>
+
+        <li className="list-inline-item">
+          <Link href="/Accessories">
             <a className="nav-link text-black">
               <AccountCircleOutlinedIcon />
             </a>

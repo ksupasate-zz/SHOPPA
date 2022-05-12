@@ -45,7 +45,7 @@ export default function TableBan() {
             alignItem='flex-start'
             justifyContent='flex-start'>
           <Grid item xs={12}>
-          <TableContainer  sx={{ minWidth: 1400, borderRadius: '16px' }}  >
+          <TableContainer  sx={{ minWidth: 1700, borderRadius: '16px' }}  >
             <Table >
               <TableHead  >
                 <TableRow >
@@ -73,7 +73,7 @@ export default function TableBan() {
                       <TableCell align="left">{row.Member_FName + ' ' + row.Member_LName}</TableCell>
                       <TableCell align="left">{row.Member_Telephone}</TableCell>
                       <TableCell align="center">{row.Member_Email}</TableCell>
-                      <TableCell align="center" ><Op /></TableCell>
+                      <TableCell align="center" ><Op id={row.Member_ID}/></TableCell>
                       <TableCell ><div className={(row.Member_BanStatus == '0') ? styles.status : styles.status1}>{(row.Member_BanStatus == '0') ? 'Active' : 'Ban'}</div></TableCell>
                     </TableRow>
                   ))}
