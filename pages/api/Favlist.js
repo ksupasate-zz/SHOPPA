@@ -9,10 +9,10 @@ const db = mysql.createConnection({
 export default function Fav(req, res) {
         db.query(" SELECT COUNT(c.Category_ID) AS countCate,c.Category_Name FROM Category c,Product p,Favorite f WHERE c.Category_ID = p.Category_ID AND p.Product_ID = f.Product_ID GROUP BY c.Category_ID,c.Category_Name ORDER BY countCate DESC", (err, result) => {
             if (err) {
-                res.status(300).json(result);
+                res.status(200).json(result);
                 
             } else {
-                res.status(300).json(result);
+                res.status(200).json(result);
             }
         });
 }
