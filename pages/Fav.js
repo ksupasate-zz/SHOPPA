@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Image, Avatar } from '@mui/material';
+import { Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Image, Avatar,Grid } from '@mui/material';
 import UI from '@mui/material';
 import styles from '../styles/Home.module.css'
 import Stack from '@mui/material/Stack';
 import Sy from '../component/selectyear'
 import Sm from '../component/selectmonth'
-import Nav from '../component/Navbar';
+import Nav from '../component/NavbarAddmin';
 
 
 export default function TableFav() {
@@ -33,6 +33,11 @@ export default function TableFav() {
           </Stack>
           <br />
           <Container align="center" className={styles.marginFav} >
+          <Grid container
+            direction="row"
+            alignItem='flex-start'
+            justifyContent='flex-start'>
+          <Grid item xs={12}>
             <TableContainer component={Paper} sx={{ maxWidth: 1000, borderRadius: '16px' }}  >
               <Table size="small" aria-label="customized table">
                 <TableBody >
@@ -54,6 +59,8 @@ export default function TableFav() {
                 </TableBody>
               </Table>
             </TableContainer>
+            </Grid>
+            </Grid>
           </Container>
           <br></br>
         </div>
