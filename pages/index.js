@@ -1,18 +1,20 @@
-import Head from "next/head"
-import Footer from "./comps/footer"
-import Navbar from "./comps/Navbar"
 
+import Footer from "./comps/Footer"
+import Navbar from "./comps/Navbar"
+import styles from '/styles/Home.module.css';
 
 
 
 export default function Home() {
   return (
     <div>
+      
+    <div className={styles.bar}><Navbar /></div>
    
-   <Navbar />
+  
 
-      
-      
+    <Footer />  
+    
     
     </div>
   )

@@ -1,0 +1,40 @@
+.box {
+	width: 35%;
+	height: 120px;
+    border-radius: 20px;
+	overflow: hidden;
+    padding-top: 10px;
+	margin-bottom: 10px;
+	background: #EBEBFA;
+	transition: all .6s ease;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.paymentmethod {
+    padding-top: 15px;
+    padding-left: 5%;
+}
+
+.paymentmethod .add {
+    padding-top: 30px;
+    padding-left: 50%;
+}
+
+
+.visa {
+    padding-top: 15px;
+    padding-left: 5%;
+    padding-bottom: 20px;
+}
+
+.visa .edit {
+    padding-left: 65%;
+ 
+}
+
+.click {
+    cursor: pointer;
+        
+}
+
+

@@ -24,3 +24,12 @@
   position: relative;
   top: -80%;
 }
+
+.bar {
+  padding: 1%;
+  background: linear-gradient(#e1e1ff ,white);
+  height: 10rem; 
+  margin: 0;
+  height: 100%;
+  clear: both;
+}
