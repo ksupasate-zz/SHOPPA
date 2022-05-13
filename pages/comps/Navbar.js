@@ -61,15 +61,7 @@ export default function Navbar() {
       </div>
       <div className="w-25">
         <li className=" list-inline-item">
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <Link href="/Accessories">
-=======
           <Link href="/cart">
->>>>>>> main
-=======
-          <Link href="/Accessories">
->>>>>>> remotes/origin/master
             <a className="nav-link text-black">
               <ShoppingCartOutlinedIcon />
             </a>
@@ -94,12 +86,4 @@ export default function Navbar() {
       </div>
     </Nav>
   );
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> main
-=======
-}
->>>>>>> remotes/origin/master

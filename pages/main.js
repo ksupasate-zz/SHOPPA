@@ -4,7 +4,6 @@ import Navbar from "./comps/Navbar";
 import { Carousel } from "antd";
 import { Card } from "antd";
 import { height } from "@mui/system";
-
 const { Meta } = Card;
 
 export default function Home() {
