@@ -5,9 +5,9 @@ import Checkbox from "@mui/material/Checkbox";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
 import { red } from "@mui/material/colors";
-import Navbar from "../comp/Navbar";
-import Button from "../comp/Button";
-import Profile from "../comp/Profile";
+import Navbar from "../comps/Navbar";
+import Button from "../comps/Button";
+import Profile from "../comps/Profile";
 import {useRouter} from "next/router";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };

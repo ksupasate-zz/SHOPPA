@@ -4,6 +4,7 @@ import Link from "next/link";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import AccountMenu from "../comps/Account";
 
 export default function Navbar() {
   return (
@@ -77,11 +78,7 @@ export default function Navbar() {
         </li>
 
         <li className="list-inline-item">
-          <Link href="/Accessories">
-            <a className="nav-link text-black">
-              <AccountCircleOutlinedIcon />
-            </a>
-          </Link>
+         <AccountMenu/>
         </li>
       </div>
     </Nav>

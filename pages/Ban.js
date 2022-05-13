@@ -4,8 +4,8 @@ import { Container, Table, TableBody, TableCell, TableContainer, TableHead, Tabl
 import { Pagination, PaginationItem, Stack, TablePagination,Grid } from '@mui/material';
 import UI from '@mui/material';
 import styles from '../styles/Home.module.css'
-import Op from '../comp/operator'
-import Nav from '../comp/NavbarAddmin'
+import Op from '../comps/operator'
+import Nav from '../comps/NavbarAddmin'
 import { Main } from 'next/document';
 
 

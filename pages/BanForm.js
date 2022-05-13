@@ -1,6 +1,6 @@
 import Card from '@mui/material/Card';
 import styles from "../styles/Home.module.css";
-import BasicSelect from "../comp/selectBan";
+import BasicSelect from "../comps/selectBan";
 import { useCallback } from 'react'
 import {useRouter} from "next/router";
 import { CardContent, Grid, TextField, Button, createTheme, ThemeProvider, Typography  } from '@mui/material';
