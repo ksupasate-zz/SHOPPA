@@ -1,6 +1,6 @@
 import Card from '@mui/material/Card';
 import styles from "../styles/Home.module.css";
-import BasicSelect from "./comp/selectBan";
+import BasicSelect from "./comps/selectBan";
 import * as React from 'react';
 import { useCallback } from 'react'
 
