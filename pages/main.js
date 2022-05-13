@@ -70,10 +70,12 @@ export default function Home() {
             hoverable
             style={{ width: 300 }}
             cover={
+              <Link href="/Product?id=P0000009">
               <img
                 alt="example"
                 src="https://cf.shopee.co.th/file/4bd5094d47d3922fb1131efb8b1fdaef"
               />
+              </Link>
             }
           >
             <Meta title="Product Name" description="3600 ฿"/>

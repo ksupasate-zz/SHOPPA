@@ -33,7 +33,7 @@ const [log, setlog] = React.useState([]);
           onChange={handleChange}
         >
           {log.map((row, i) => (
-                  <MenuItem value ={i}>{row.LogCase_Detail}</MenuItem>
+                  <MenuItem value ={i+1}>{row.LogCase_Detail}</MenuItem>
                   ))} 
         </Select>
       </FormControl>

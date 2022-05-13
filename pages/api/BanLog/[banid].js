@@ -21,7 +21,6 @@ export default function BanLog(req, res) {
                     'INSERT INTO Log(Log_ID,Admin_ID, Member_ID, LogCase_ID, Log_Comment) VALUES (?,"A0000000",?,?,?)',
                     [FinalLog_ID,banid,upLog.banType,upLog.Comment] ,
                     function (err, _results) {
-                        console.log("ASD")
                         db.query("UPDATE Members SET Member_Banstatus='1' WHERE Member_ID=?",[banid], (err, result) => {
                             if (err) {
                                 console.log(err);
