@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
-import Navbar from "../component/Navbar";
+import Navbar from "../comp/Navbar";
 import { Carousel } from "antd";
 import { Card } from "antd";
 import { height } from "@mui/system";

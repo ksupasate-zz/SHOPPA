@@ -3,9 +3,9 @@ import { Container, Table, TableBody, TableCell, TableContainer, TableHead, Tabl
 import UI from '@mui/material';
 import styles from '../styles/Home.module.css'
 import Stack from '@mui/material/Stack';
-import Sy from '../component/selectyear'
-import Sm from '../component/selectmonth'
-import Nav from '../component/NavbarAddmin';
+import Sy from '../comp/selectyear'
+import Sm from '../comp/selectmonth'
+import Nav from '../comp/NavbarAddmin';
 
 
 export default function TableFav() {

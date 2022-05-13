@@ -5,9 +5,9 @@ import Checkbox from "@mui/material/Checkbox";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
 import { red } from "@mui/material/colors";
-import Navbar from "../component/Navbar";
-import Button from "../component/Button";
-import Profile from "../component/Profile";
+import Navbar from "../comp/Navbar";
+import Button from "../comp/Button";
+import Profile from "../comp/Profile";
 import {useRouter} from "next/router";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
@@ -118,7 +118,7 @@ export default function Home() {
             </Stack>
 
           </div>
-          <br></br><h4>Quantity : {(data.length>0)?data[0].Product_Quantity:''} </h4>
+          <br></br><h4>Quantity : {(data.result)?data.result[0].Product_Quantity:''} </h4>
         </div>
       </aside>
     </main>
