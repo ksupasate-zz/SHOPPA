@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .orange{
   background-color: #f93;
   width: 100%;
@@ -26,10 +27,306 @@
 }
 
 .bar {
+=======
+.main {
+>>>>>>> remotes/origin/master
   padding: 1%;
   background: linear-gradient(#e1e1ff ,white);
   height: 10rem; 
   margin: 0;
   height: 100%;
   clear: both;
+<<<<<<< HEAD
 }
+=======
+}
+
+.topleft {
+  padding-left: 7%;
+  margin: 0;
+  float: left;
+  clear: both;
+  width: 46rem;
+}
+
+.des {
+  width: auto;
+  height: auto;
+  float: right;
+  margin-right: 5rem;
+  clear: both;
+  margin-bottom: 2rem;
+}
+
+
+.btleft {
+  opacity: 0.5;
+  /* top: -8rem; */
+  display: inline-flex; 
+  position: relative;
+  clear: both;
+  float: left;
+}
+
+.space {
+  margin: 10px;
+}
+
+.comment1
+{
+  clear: both;
+  padding-right: 5%;
+}
+
+.image {
+  transform: scaleX(-1);
+  height: 360px;
+  width: 600px;
+  object-fit: cover;
+  position: relative;
+  overflow: auto;
+  box-sizing: inherit;
+}
+
+.right {
+  float: right;
+  display: inline-block;
+  clear: right;
+}
+
+.description {
+  margin-top: 20px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.desbox {
+  width: 280px;
+  height: 190px;
+  overflow-y: scroll;
+  clear: both;
+}
+
+.linedes {
+  clear: both;
+  width: 90%;
+}
+
+.add2cart {
+  width: 8rem;
+  height: 2.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #C2C2EE;
+  border: none;
+  border-radius: 10px;
+  
+}
+
+.add2cart:hover {
+  background-color: #714cd8;
+  cursor: pointer;
+}
+
+.add , .sub, .num{
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  top: 0.45rem; 
+  align-items: center;
+}
+
+.add {
+  padding-right: 10px;
+}
+
+.add:hover , .sub:hover {
+  cursor: pointer;
+  background-color: gray;
+}
+
+.val {
+  font-size: 1.25rem;
+  width: 2rem;
+  height: 2rem;
+  top: 0.45rem;
+  position: relative;
+  font-weight: bold;
+  text-align: center;
+  color:#000;
+}
+
+.val:hover {
+  cursor: none;
+}
+
+.button {
+  margin-top: 1rem;
+  position: relative;
+  right: 0.1rem;
+}
+
+/*Component Profile*/
+.profile{
+  float: left;
+  width: 100%;
+  height: auto;
+  margin-right: 13.5rem;
+  text-align: center;
+}
+.profile img{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 6px solid rgba(0, 0, 0, .3);
+}
+.profileDetail{
+  width: 55%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profile p{
+  color: #555;
+}
+.profile h4{
+  font-weight: 700;
+}
+.profileLeft{
+  width: 50%;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  border-right: 2px solid #000;
+}
+.profileRight{
+  width: 50%;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Main */
+.contentStyle {
+  height: 390px;
+  color: #fff;
+  text-align: center;
+  background: #364d79;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slide {
+  height: 400px;
+  width: 85%;
+  margin: 0 auto;
+  object-fit: fill;
+}
+
+.contentStyle img{
+  width: 100%;
+  position: relative;
+}
+
+.new {
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  width: 100%;
+}
+
+.card {
+  display:inline-block;
+  margin-left: 6.55%;
+  margin-right: 6.55%;
+  margin-bottom: 2%;
+  width: 33%;
+}
+
+.view {
+  border-radius: 50px;
+  width: 160px;
+  height: 60px;
+  background-color: #fff;
+  font-weight: bold;
+  font-size: large;
+  border-width: 3px;
+  margin-top: 1%;
+  
+}
+
+.view:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.our {
+  width: 450px;
+  height: 500px;
+  display: inline-block;
+  overflow: hidden;
+  object-fit: cover;
+  position: relative;
+  margin-left: 9.85%;
+  margin-right: 9.85%;
+  border-radius: 20px;
+}
+
+.our > a {
+  opacity: 60%;
+  
+}
+
+.center {
+  font-size: 2rem;
+  font-weight: bolder;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center:hover {
+  cursor: none;
+}
+
+.our:hover, .cate:hover {
+  box-shadow: 0 0 3px black;
+}
+
+.cate {
+  width: 350px;
+  height: 300px;
+  display: inline-block;
+  overflow: hidden;
+  object-fit: cover;
+  position: relative;
+  margin-left: 4.91%;
+  margin-right: 4.91%;
+  margin-top: 8%;
+  border-radius: 5px;
+}
+
+.cate > a {
+  opacity: 60%;
+  top: -50%;
+  left: -50%;
+  position: relative;
+  object-fit: fill;
+}
+
+.catename {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+
+>>>>>>> remotes/origin/master

@@ -1,7 +1,6 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-html,
-.body {
+body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -9,9 +8,13 @@ html,
   background-color: white;
 }
 
+#__next {
+  max-height: 100vh;
+}
+
 a {
   color: inherit;
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 * {

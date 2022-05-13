@@ -1,4 +1,3 @@
-
 import Footer from "./comps/Footer"
 import Navbar from "./comps/Navbar"
 import styles from '/styles/Home.module.css';
