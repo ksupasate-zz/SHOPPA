@@ -230,6 +230,9 @@
   margin-right: 6.55%;
   margin-bottom: 2%;
   width: 33%;
+  float: left;
+  object-fit: cover;
+  position: relative;
 }
 
 .view {

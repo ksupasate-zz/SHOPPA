@@ -49,7 +49,7 @@ export default function Home() {
       <Navbar></Navbar>
       <section className={styles.topleft}>
         <h2>{(data.result)?data.result[0].Product_Name:''}</h2>
-        <h3>{(data.result)?data.result[0].Product_Price:''} ฿</h3>
+        <h5>{(data.result)?data.result[0].Product_Price:''} ฿</h5>
         <img
           className={styles.image}
           src={(data.result)?data.result[0].Product_Image:''}

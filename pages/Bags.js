@@ -15,7 +15,7 @@ export default function Home() {
   const [data, setdata] = React.useState([]);
   React.useEffect(() => {
     console.log(id);
-    fetch("/api/Image/CG0000000") //ProductList+(id=P...)
+    fetch("/api/Image/CG0000004") //ProductList+(id=P...)
       .then((res) => res.json())
       .then((result) => {
         setdata(result);
@@ -26,7 +26,7 @@ export default function Home() {
     <main className={styles.main}>
       <Navbar></Navbar>
       <div className={styles.catename}>
-        <h1>Shoes</h1>
+        <h1>Bags</h1>
       </div>
       {data.map((row, i) => (
         <div>
