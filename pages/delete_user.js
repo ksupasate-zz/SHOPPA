@@ -1,7 +1,5 @@
 import Card from '@mui/material/Card';
 import styles from "../styles/Home.module.css";
-import Link from 'next/link'
-
 
 import { CardContent, Grid, TextField, Button, createTheme, ThemeProvider , Typography } from '@mui/material';
 export default function register() {
@@ -9,14 +7,11 @@ export default function register() {
         <main className={styles.main}>
             <Card style={{maxWidth:450, margin:"0 auto", padding:"20px 5px"}} >
                 <CardContent >
-                    <Typography gutterBottom variant="h4">Sign In</Typography>
+                    <Typography gutterBottom variant="h4">Delete Account</Typography>
                     <form>
 
                    
                     <Grid container spacing={1}>
-                        <Grid xs={12} item>
-                        <TextField type="email" name="email" label = "Email" placeholder= "Enter email address" variant="outlined" fullWidth required/>
-                        </Grid>
                         <Grid xs={12} item>
                         <TextField type="password" name="password" label = "Password" placeholder= "Enter password" variant="outlined" fullWidth required/>
                         </Grid>
@@ -26,9 +21,9 @@ export default function register() {
                         </ThemeProvider>
                         </Grid>
                         <Grid xs={12} item>
-                        <Link href="/register" replace>
-                            <a>About us</a>
-                        </Link>
+                        <ThemeProvider theme={theme}>
+                        <Button type="submit" variant='outlined' color='neutral' fullWidth>Cancel</Button>
+                        </ThemeProvider>
                         </Grid>
                         
                     </Grid>

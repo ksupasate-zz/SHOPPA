@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import DenseTable from "./component/table";
+import DenseTable from "./comp/table";
 
 export default function Home() {
   return (

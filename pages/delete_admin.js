@@ -13,16 +13,13 @@ export default function register() {
                    
                     <Grid container spacing={1}>
                         <Grid xs={12} item>
-                        <TextField type="password" label = "Password" placeholder= "Enter password" variant="outlined" fullWidth required/>
-                        </Grid>
-                        <Grid xs={12} item>
                         <ThemeProvider theme={theme}>
                         <Button type="submit" variant='contained' color='neutral' fullWidth>Submit</Button>
                         </ThemeProvider>
                         </Grid>
                         <Grid xs={12} item>
                         <ThemeProvider theme={theme}>
-                        <Button type="submit" variant='outlined' color='neutral' fullWidth>Cancel</Button>
+                        <Button type="cancel" variant='outlined' color='neutral' fullWidth>Cancel</Button>
                         </ThemeProvider>
                         </Grid>
                         
