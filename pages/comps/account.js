@@ -75,7 +75,7 @@ export default function AccountMenu() {
         <MenuItem>
           <Avatar /> Profile
         </MenuItem>
-        <MenuItem>
+        {/* <MenuItem>
           <Avatar /> My account
         </MenuItem>
         <Divider />
@@ -84,7 +84,8 @@ export default function AccountMenu() {
             <PersonAdd fontSize="small" />
           </ListItemIcon>
           Add another account
-        </MenuItem>
+        </MenuItem> */}
+        <Divider />
         <MenuItem>
           <ListItemIcon>
             <Settings fontSize="small" />
