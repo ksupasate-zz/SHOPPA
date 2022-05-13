@@ -1,10 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-<<<<<<< HEAD
 import styles from '/styles/Product.module.css';
-=======
-import styles from '../../styles/Home.module.css'
->>>>>>> remotes/origin/master
 import { style } from '@mui/system'
 export default function Profile() {
     return (
