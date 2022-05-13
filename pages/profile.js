@@ -1,6 +1,6 @@
 import Card from '@mui/material/Card';
 import styles from "../styles/Home.module.css";
-import BasicSelect from "./comp/select";
+import BasicSelect from "./comps/select";
 
 import { CardContent, Grid, TextField, Button, createTheme, ThemeProvider, Typography  } from '@mui/material';
 export default function register() {
