@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 import Navbar from "./comps/Navbar";
 import { Carousel } from "antd";
 import { Card } from "antd";
-import { height } from "@mui/system";
+import Link from "next/link";
 
 const { Meta } = Card;
 
@@ -34,37 +34,43 @@ export default function Home() {
             hoverable
             style={{ width: 300 }}
             cover={
+              <Link href="/Product?id=P0000007">
               <img
                 alt="example"
                 src="https://cf.shopee.co.th/file/9b44066d2ddd6db2a39d0a9c2248b634"
               />
+              </Link>
             }
           >
-            <Meta title="Product Name" description="3600 ฿" />
+            <Meta title="Air Jordan 1 Retro UNC" description="6400 ฿" />
           </Card>
           <Card className={styles.card}
             hoverable
             style={{ width: 300 }}
             cover={
+              <Link href="/Product?id=P0000008">
               <img
                 alt="example"
                 src="https://cf.shopee.co.th/file/77ae064ea246fbeba9b64f4faa4d0ff7"
               />
+              </Link>
             }
           >
-            <Meta title="Product Name" description="3600 ฿" />
+            <Meta title="Air Jordan 1 Mid Chicago Toe" description="4200 ฿" />
           </Card>
           <Card className={styles.card}
             hoverable
             style={{ width: 300 }}
             cover={
+              <Link href="/Product?id=P0000009">
               <img
                 alt="example"
                 src="https://cf.shopee.co.th/file/4bd5094d47d3922fb1131efb8b1fdaef"
               />
+              </Link>
             }
           >
-            <Meta title="Product Name" description="3600 ฿"/>
+            <Meta title="Air Jordan 1 Retro High OG Sail" description="5800 ฿"/>
           </Card>
         </div>
         <div className={styles.new}>
@@ -82,7 +88,7 @@ export default function Home() {
                 <div className={styles.center}>Our Blog</div>
             </div>
             <div className={styles.cate}>
-                <a href="#"><img src="https://cf.shopee.co.th/file/a4d6f08393112649b3d2627c14ef1d8c"></img></a>
+                <a href="/Shoes"><img src="https://cf.shopee.co.th/file/a4d6f08393112649b3d2627c14ef1d8c"></img></a>
                 <div className={styles.center}>Shoes</div>
             </div>
             <div className={styles.cate}>
