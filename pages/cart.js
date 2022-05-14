@@ -9,7 +9,7 @@ import stylesSelectAddress from '/styles/SelectAddress.module.css';
 import Creditcard from './comps/Creditcard'
 import React, { useEffect, useRef, useState } from "react";
 import { CreditCard } from '@mui/icons-material';
-
+import PaymentMethod from "./comps/PaymentMethod";
 
 
 var clicks = 0;
@@ -91,23 +91,7 @@ export default function Cart() {
         </div>
 
         {/* PaymentMethod */}
-        <div className={stylesPaymentMethod.box}>
-        <div className={stylesPaymentMethod.paymentmethod}>
-          <span>Select Payment method</span>
-          <span className={stylesPaymentMethod.add}>
-            <span className={stylesPaymentMethod.click} onClick={() => setShowModal(true)}><u>ADD</u></span>
-            <Creditcard
-              onClose={() => setShowModal(false)}
-              show={showModal}
-            >
-            </Creditcard>
-          </span>
-        </div>
-        <div className={stylesPaymentMethod.visa}>
-          <span>Visa</span> <span>12123***</span>
-          <span className={stylesPaymentMethod.edit}><u>Edit</u></span>
-        </div>
-      </div>
+       <PaymentMethod />
 
       {/* Select Address */}
       <div className={stylesSelectAddress.box}>

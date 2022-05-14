@@ -27,8 +27,9 @@ const Modal = ({ show, onClose }) => {
         return res.json()
       })
       .then((upCredit) => {
-        alert(upCredit.message)
+        alert("Success")
         console.log(upCredit.message)
+        window.location.replace("./cart");
       })
   }, [])
 
