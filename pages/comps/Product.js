@@ -28,10 +28,10 @@ export function minus() {
 export function alert() {
   window.alert("Product");
 }
-export default function Product() {
-  const router = useRouter() 
+export default function Home() {
+  const router = useRouter()
   const { id } = router.query //fetch from url
-  const [data, setdata] = React.useState([]);
+  const [data, setdata] = React.useState({});
   React.useEffect(() => {
     if(!id)return
     console.log(id)
@@ -46,11 +46,11 @@ export default function Product() {
     <main className={styles.main}>
       <Navbar></Navbar>
       <section className={styles.topleft}>
-        <h2>{(data.length>0)?data[0].Product_Name:''}</h2>
-        <h5>{(data.length>0)?data[0].Product_Price:''} ฿</h5>
+        <h2>{(data.result)?data.result[0].Product_Name:''}</h2>
+        <h3>{(data.result)?data.result[0].Product_Price:''} ฿</h3>
         <img
           className={styles.image}
-          src={(data.length>0)?data[0].Product_Image:''}
+          src={(data.result)?data.result[0].Product_Image:''}
           alt="NikeDunkLow"
         />
         <article className={styles.btleft}>
@@ -59,7 +59,7 @@ export default function Product() {
           name="comment1"
           rows={5}
           cols={29}
-          placeholder="Comment 1"
+          value={(data.result2 && data.result2.length>0)?data.result2[0].Review_Comment:''}
           defaultValue={""}
         />
         <div className={styles.space}></div>
@@ -68,7 +68,7 @@ export default function Product() {
           name="comment2"
           rows={5}
           cols={29}
-          placeholder="Comment 2"
+          value={(data.result2 && data.result2.length>1)?data.result2[1].Review_Comment:''}
           defaultValue={""}
         />
       </article>
@@ -81,7 +81,7 @@ export default function Product() {
           <p className={styles.description}>Description</p>
           <hr className={styles.linedes}></hr>
           <p className={styles.desbox}>
-          {(data.length>0)?data[0].Product_Detail:''}
+          {(data.result)?data.result[0].Product_Detail:''}
           </p>
           <hr className={styles.linedes}></hr>
           <div className={styles.button}>
@@ -116,7 +116,7 @@ export default function Product() {
             </Stack>
 
           </div>
-          <br></br><h4>Quantity : {(data.length>0)?data[0].Product_Quantity:''} </h4>
+          <br></br><h4>Quantity : {(data.result)?data.result[0].Product_Quantity:''} </h4>
         </div>
       </aside>
     </main>

@@ -11,7 +11,6 @@ export default function Home() {
     <div>
       
     <div className={styles.bar}><Navbar /></div>
-   
     <Main/>
     <CategoryCard/>
     <Footer />  
