@@ -314,4 +314,36 @@
   text-align: center;
 }
 
+/* Footer */
 
+.footer {
+  right: 1px;
+  position: absolute;
+  width: 100%;
+  height: 190px;
+  background-color: #cacaff;
+  padding-left: 10%;
+}
+
+.head {
+  padding-top: 1.5%;
+  width: 10%;
+}
+
+.table {
+  color: #000080;
+}
+
+.td {
+  color: #000080;
+  padding-right: 1%;
+}
+
+.td:hover {
+  color: #00001a;
+  cursor: pointer;
+}
+
+.last {
+  display: flex;
+}
