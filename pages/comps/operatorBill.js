@@ -15,9 +15,9 @@ export default function Image123({id}) {
             
 
             <IconButton aria-label="EditIconn" >
-            <Link href={"/BillForm?id="+id }>
+           
                     <EditIcon />
-                    </Link>
+         
                 </IconButton>
           
         </div>

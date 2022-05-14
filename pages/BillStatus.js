@@ -19,6 +19,9 @@ export default function TableBillStatus() {
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
+  
+  
+
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
@@ -30,6 +33,20 @@ export default function TableBillStatus() {
         setrows(result)
       })
   }, [])
+
+ function change(_id){
+  if(confirm("Change Bill Status?")){
+    fetch('/api/BillLog/'+_id)
+    .then((res) => res.json())
+    .then((result) => {
+      //setrows(result)
+    })
+    window.location.href=window.location.href
+}
+  else{
+
+  }
+  }
 
   return (
     <main>
@@ -68,8 +85,8 @@ export default function TableBillStatus() {
                    <TableCell align="left">{i+1}</TableCell>
                       <TableCell align="left">{row.Bill_ID}</TableCell>
                       <TableCell align="left">{row.Order_ID}</TableCell>
-                      <TableCell align="center">{<Op id={row.Bill_ID}/>}</TableCell>
-                      <TableCell ><div className={(row.Bill_Status == '0') ? styles.status : styles.status1}>{(row.Bill_Status == '0') ? '1' : '0'}</div></TableCell>
+                      <TableCell align="center" onClick={()=>change(row.Bill_ID)}>{<Op   />}</TableCell>
+                      <TableCell ><div className={(row.Bill_Status == '0') ? styles.status : styles.status1}>{(row.Bill_Status == '0') ? '0' : '1'}</div></TableCell>
                     </TableRow>
                   ))}
               </TableBody>
