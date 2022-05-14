@@ -2,16 +2,17 @@ import 'bootstrap/dist/css/bootstrap.css'
 import '../styles/globals.css'
 import 'antd/dist/antd.css';
 
-function MyApp({ Component, pageProps }) {
+import { SessionProvider } from "next-auth/react"
+
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
   return (
-
-    <div className="wrapper">
-     
+    <SessionProvider session={session}>
       <Component {...pageProps} />
-      
-    </div>
-
-  );
+    </SessionProvider>
+  )
 }
 
-export default MyApp
+

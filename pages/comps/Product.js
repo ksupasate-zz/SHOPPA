@@ -47,7 +47,7 @@ export default function Product() {
       <Navbar></Navbar>
       <section className={styles.topleft}>
         <h2>{(data.length>0)?data[0].Product_Name:''}</h2>
-        <h3>{(data.length>0)?data[0].Product_Price:''} ฿</h3>
+        <h5>{(data.length>0)?data[0].Product_Price:''} ฿</h5>
         <img
           className={styles.image}
           src={(data.length>0)?data[0].Product_Image:''}

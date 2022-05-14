@@ -2,13 +2,16 @@ import React from "react";
 import styles from "/styles/Home.module.css";
 import { Carousel } from "antd";
 import { Card } from "antd";
-import { height } from "@mui/system";
+import Link from "next/link";
+import Navbar from "./Navbar";
+
 const { Meta } = Card;
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div>
+    <main className={styles.main1}>
+      
+            <div>
         <Carousel autoplay className={styles.slide}>
           <div className={styles.contentStyle}>
             <img src="https://sasom.co.th/_next/image?url=https%3A%2F%2Fd2cva83hdk3bwc.cloudfront.net%2FHero_Banner_3_en.png&w=1920&q=75"></img>
@@ -31,37 +34,43 @@ export default function Home() {
             hoverable
             style={{ width: 300 }}
             cover={
+              <Link href="/ProductCard?id=P0000007">
               <img
                 alt="example"
                 src="https://cf.shopee.co.th/file/9b44066d2ddd6db2a39d0a9c2248b634"
               />
+              </Link>
             }
           >
-            <Meta title="Product Name" description="3600 ฿" />
+            <Meta title="Air Jordan 1 Retro UNC" description="6400 ฿" />
           </Card>
           <Card className={styles.card}
             hoverable
             style={{ width: 300 }}
             cover={
+              <Link href="/ProductCard?id=P0000008">
               <img
                 alt="example"
                 src="https://cf.shopee.co.th/file/77ae064ea246fbeba9b64f4faa4d0ff7"
               />
+              </Link>
             }
           >
-            <Meta title="Product Name" description="3600 ฿" />
+            <Meta title="Air Jordan 1 Mid Chicago Toe" description="4200 ฿" />
           </Card>
           <Card className={styles.card}
             hoverable
             style={{ width: 300 }}
             cover={
+              <Link href="/ProductCard?id=P0000009">
               <img
                 alt="example"
                 src="https://cf.shopee.co.th/file/4bd5094d47d3922fb1131efb8b1fdaef"
               />
+              </Link>
             }
           >
-            <Meta title="Product Name" description="3600 ฿"/>
+            <Meta title="Air Jordan 1 Retro High OG Sail" description="5800 ฿"/>
           </Card>
         </div>
         <div className={styles.new}>
@@ -77,18 +86,6 @@ export default function Home() {
             <div className={styles.our}>
                 <a href="#"><img src="https://i.pinimg.com/736x/2c/a0/2a/2ca02a6531b013f104bafa55061882b4.jpg"></img></a>
                 <div className={styles.center}>Our Blog</div>
-            </div>
-            <div className={styles.cate}>
-                <a href="#"><img src="https://cf.shopee.co.th/file/a4d6f08393112649b3d2627c14ef1d8c"></img></a>
-                <div className={styles.center}>Shoes</div>
-            </div>
-            <div className={styles.cate}>
-                <a href="#"><img src="https://cf.shopee.co.th/file/ff3aa71da5e64f48e3b049599cf1f659"></img></a>
-                <div className={styles.center}>Apparel</div>
-            </div>
-            <div className={styles.cate}>
-                <a href="#"><img src="https://cf.shopee.co.th/file/d0f1760a963499508a61d45fe6c52fda"></img></a> 
-                <div className={styles.center}>Accessories</div>
             </div>
         </div>
       </div>
