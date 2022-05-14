@@ -18,17 +18,17 @@ export default function login() {
             Password: e.target[2].value,
         }
         console.log(data)
-        fetch('/api/login', {
+        fetch('/api/loginAdmin', {
             method: 'POST',
             body: JSON.stringify({ data }),
             headers: { 'Content-Type': 'application/json' },
         }).then((res) => {
             return res.json()
         }).then((data) => {
-            if(data.check == "Member"){
-                setCookie('Member' , data.id , {path : '/'})
+            if(data.check == "Admin"){
+                setCookie('Admin' , data.id , {path : '/'})
                 alert("Welcome back " + data.id)
-                window.location.replace("./profile");
+                window.location.replace("./Ban");
             }else{
                 alert("Please try again")
             }
