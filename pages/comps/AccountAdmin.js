@@ -2,6 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
@@ -13,6 +14,7 @@ import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import { useCookies } from 'react-cookie';
 import { useRouter } from 'next/router';
+import BlockIcon from '@mui/icons-material/Block';
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -106,9 +108,22 @@ export default function AccountMenu() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        {
-          (cookies['Member'])?
-            <>
+        <a href="/Ban" >
+        <MenuItem >
+          <ListItemIcon>
+            <BlockIcon fontSize="small"  />
+          </ListItemIcon>
+          Ban Menu
+        </MenuItem>
+        </a>
+        <a href="/Fav" >
+        <MenuItem >
+          <ListItemIcon>
+            <FavoriteIcon fontSize="small"  />
+          </ListItemIcon>
+          Favorite Menu
+        </MenuItem>
+        </a>
         <a href="/" onClick={signout}>
         <MenuItem >
           <ListItemIcon>
@@ -117,8 +132,6 @@ export default function AccountMenu() {
           Logout
         </MenuItem>
         </a>
-        </>:""
-        }
       </Menu>
     </React.Fragment>
   );

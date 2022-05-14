@@ -14,20 +14,10 @@ export default function login(req, res) {
     db.query(
         'SELECT Member_ID FROM `Members` WHERE `Member_Email` = ? AND `Member_Password` = ?', [data.Email , data.Password],
         function (err, results) {
-            console.log(results)
-            if(results){
+            if(results[0]){
                 res.status(200).json({check : "Member" , id : results[0].Member_ID})
             }else{
-                db.query( // Check Admin
-                    'SELECT Admin_ID FROM `Admin` WHERE Admin_Email = ? AND Admin_Password = ?', [data.Email , data.Password],
-                    function (err, results) {
-                        if(results){
-                            res.status(200).json({check : "Admin" , id : results[0].Admin_ID})
-                        }else{
-                            res.status(200).json({check : "Can't Login"})
-                        }
-                    }
-                )   
+                res.status(200).json({check : "Can't Login"})
             }
        }
     );

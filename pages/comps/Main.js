@@ -78,16 +78,6 @@ export default function Home() {
               View More
             </button> 
         </div>
-        <div>
-            <div className={styles.our}>
-                <a href="#"><img src="https://i.pinimg.com/736x/2c/a0/2a/2ca02a6531b013f104bafa55061882b4.jpg"></img></a>
-                <div className={styles.center}>Our Story</div>
-            </div>
-            <div className={styles.our}>
-                <a href="#"><img src="https://i.pinimg.com/736x/2c/a0/2a/2ca02a6531b013f104bafa55061882b4.jpg"></img></a>
-                <div className={styles.center}>Our Blog</div>
-            </div>
-        </div>
       </div>
     </main>
   );

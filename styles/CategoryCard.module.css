@@ -50,6 +50,7 @@
 
 .card:hover .image {
   transform: scale(1.2);
+  cursor: pointer;
 }
 
 .card:hover .info {
@@ -58,6 +59,7 @@
 
 .card1:hover .image {
   transform: scale(1.2);
+  cursor: pointer;
 }
 
 .card1:hover .info {
@@ -78,7 +80,7 @@
 }
 
 .center:hover {
-  cursor: none;
+  cursor: pointer;
 }
 
 .text {
