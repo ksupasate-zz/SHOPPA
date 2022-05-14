@@ -1,6 +1,6 @@
 const mysql = require('mysql2');
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     database: process.env.DB_DATABASE,
@@ -25,8 +25,8 @@ export default function apiUpCredit(req, res) {
                     let template = "CD0000000"
                     let FinalCard_ID = template.substring(0, template.length - StringCard_ID.length) + StringCard_ID
                     db.query(
-                        'INSERT INTO `Payment_Card`(`Card_ID`, `Card_Number`, `Member_ID`) VALUES (?,?,"M0000004")',
-                        [FinalCard_ID, upCredit.Card_Number] ,
+                        'INSERT INTO `Payment_Card`(`Card_ID`, `Card_Number`, `Member_ID`) VALUES (?,?,?)',
+                        [FinalCard_ID, upCredit.Card_Number , upCredit.Member_ID] ,
                     );
                 }
             );

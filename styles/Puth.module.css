@@ -1,0 +1,103 @@
+.table{
+    border-bottom: 1px solid;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .right{
+    text-align: right;
+  }
+  
+  .hr_big{
+    border-style: none;
+    border-top: 5px solid;
+    clear: left;
+  }
+  
+  .hr_med{
+    border-style: none;
+    border-top: 3px solid;
+    clear: left;
+  }
+  
+  .hr_small{
+    border-style: none;
+    border-top: 1px solid;
+    clear: left;
+  }
+  
+  .hr_invis{
+    border-style: none;
+    clear: left;
+  }
+  
+  
+  .half_left_div{
+    width: 48.5%;
+    float: left;
+    margin-right: 1.5%;
+    word-wrap: break-word;
+    position: relative;
+    height: auto;
+  }
+  
+  .half_right_div{
+    width: 48.5%;
+    float: left;
+    word-wrap: break-word;
+    margin-left: 1.5%;
+  }
+  
+  .bottom_div{
+    clear: left;
+  }
+  
+  .DESCRIPTION{
+    text-align: center;
+  }
+  
+  .mid{
+    text-align: center;
+  }
+  
+  .info{
+    width: 100%;
+    position: relative;
+  }
+  .puthfix{
+    width: 190px;
+    float: left;
+    position: relative;
+    top: -10px;
+    height: 50px;
+    
+  }
+  
+  .right{
+  
+  }
+  
+  .nineteen{
+    width: 90%;
+    align: right;
+  }
+  
+  .last_div{
+    width: 31.333%;
+    float: left;
+    word-wrap: break-word;
+  }
+  
+  .last_info{
+    text-align: right;
+  }
+  
+  .marRight{
+    margin-right: 3%;
+  }
+  
+  
+  .floatLeft{
+    float: left;
+    margin-right: 4%;
+  }

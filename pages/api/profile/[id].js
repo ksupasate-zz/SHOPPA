@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 const mysql = require('mysql2');
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     database: process.env.DB_DATABASE,
@@ -16,7 +16,7 @@ export default function wowza(req, res) {
         'SELECT * FROM `Members` WHERE Member_ID = ?', [id],
         function (err, results) {
             res.status(200).json(results)
-            console.log(results); // results contains rows returned by server
+            // console.log(results); // results contains rows returned by server
         }
     );
 }

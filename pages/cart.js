@@ -8,8 +8,10 @@ import stylesPaymentMethod from '/styles/PaymentMethod.module.css';
 import stylesSelectAddress from '/styles/SelectAddress.module.css';
 import Creditcard from './comps/Creditcard'
 import React, { useEffect, useRef, useState } from "react";
-import { CreditCard } from '@mui/icons-material';
+import { CreditCard, TransgenderTwoTone } from '@mui/icons-material';
 import PaymentMethod from "./comps/PaymentMethod";
+import { useCookies } from "react-cookie";
+import { useRouter } from "next/router";
 
 
 var clicks = 0;
@@ -26,83 +28,132 @@ export function minus() {
   document.getElementById("clicks").innerHTML = clicks;
 }
 
+export function buyMePlz(){
+  if(confirm("Are u sure about that")){
+    // alert("Yes")
+    
+    return window.open('/bill')
+    
+  }else{
+    // alert("NO")
+  }
+}
 
 export default function Cart() {
-
+  const [cookies, setCookie, removeCookie] = useCookies(['Member', 'Cart']);
+  const Router = useRouter();
+  React.useEffect(() => {
+    if (!cookies['Member']) {
+      Router.push('/login', { shallow: true })
+    }
+  }, []);
   const [showModal, setShowModal] = useState(false);
+  const cart = cookies['Cart']
+  console.log(cart)
+  let a = 0, sum = 0
+  if (cookies['Cart']) {
+    while (cookies['Cart'][a]) {
+      sum += cookies['Cart'][a].price
+      a++
+    }
+  }
+
+  if (cookies['Member']) {
+    const data = cookies['Member']
+  }
+
+  const [profileDetail, setProfileDetail] = useState([]);
+  useEffect(() => {
+    fetch('/api/profile/' + data).then((res) => {
+      return res.json()
+    }).then((data) => {
+      console.log(data)
+      setProfileDetail(data)
+    })
+  }, []);
+  console.log(profileDetail)
   return (
     <div>
       <div className={styles.bar}><Navbar /></div>
-     
-      {/* Product Card */}
-      <div className="container-fluid">
-        <div className='d-grid gap-4'>
-          <div className={stylesProductCard.box}>
-            <div className={stylesProductCard.posimg}>
-              <Image className={stylesProductCard.img} src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                width={80} height={80} />
-            </div>
-            <div className={stylesProductCard.name}>
-              <span>Nike Air Jordan</span>
-            </div>
-            <div className={stylesProductCard.posbut}>
-              <div className={stylesProductCard.button}>
-                <Stack direction="row" spacing={1}>
-                  <button className={stylesProductCard.sub} type="button" onClick={minus}>
-                    -
-                  </button>
-                  <a className={stylesProductCard.val} id="clicks">
-                    0
-                  </a>
-                  <button className={stylesProductCard.add} type="button" onClick={plus}>
-                    +
-                  </button>
-                  <div></div>
-                </Stack>
+      {
+        (cart) && cart.map((row, i) => {
+          return (
+            <>
+              <div className="container-fluid" key={i}>
+                <div className='d-grid gap-4'>
+                  <div className={stylesProductCard.box}>
+                    <div className={stylesProductCard.posimg}>
+                      <img className={stylesProductCard.img} src={row.image}
+                        width={80} height={80} />
+                    </div>
+                    <div className={stylesProductCard.name}>
+                      <span>{row.name}</span>
+                    </div>
+                    <div className={stylesProductCard.posbut}>
+                      <div className={stylesProductCard.button}>
+                        <Stack direction="row" spacing={1}>
+                          <button className={stylesProductCard.sub} type="button" onClick={minus}>
+                            -
+                          </button>
+                          <a className={stylesProductCard.val} id="clicks">
+                            {row.qty}
+                          </a>
+                          <button className={stylesProductCard.add} type="button" onClick={plus}>
+                            +
+                          </button>
+                          <div></div>
+                        </Stack>
+                      </div>
+                    </div>
+                    <div className={stylesProductCard.price}>
+                      <span>{row.price}</span> <br />
+                      <span>Bath</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className={stylesProductCard.price}>
-              <span>5000</span> <br />
-              <span>Bath</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
+            </>
+          )
+        })
+      }
+      {/* Product Card */}
       <aside className={styles.pos}>
-      
-      {/* Order Summary */}
-      <div className={stylesOrdersum.box}>
+
+        {/* Order Summary */}
+        <div className={stylesOrdersum.box}>
           <div className={stylesOrdersum.name}>
             <span>Order summary</span>
           </div>
           <div className={stylesOrdersum.total}>
-            <span>Sub total</span> 
-            <span className={stylesOrdersum.price}>10000</span> <span className={stylesOrdersum.unit}>Bath</span>
+            <span>Sub total</span>
+            <span className={stylesOrdersum.price}>{sum}</span> <span className={stylesOrdersum.unit}>Bath</span>
           </div>
           <div className={stylesOrdersum.delivery}>
-            <span>Delivery fee</span> 
-            <span className={stylesOrdersum.fee}>0</span> <span className={stylesOrdersum.unit}>Bath</span>
+            <span>Delivery fee</span>
+            <span className={stylesOrdersum.fee}>{sum * 0.07}</span> <span className={stylesOrdersum.unit}>Bath</span>
           </div>
-          <hr className={stylesOrdersum.line}/>
+          <hr className={stylesOrdersum.line} />
           <div className={stylesOrdersum.sum}>
-          <span className={stylesOrdersum.price}>10000</span> <span className={stylesOrdersum.unit}>Bath</span>
+            <span className={stylesOrdersum.price}>{sum + sum * 0.07}</span> <span className={stylesOrdersum.unit}>Bath</span>
           </div>
         </div>
 
         {/* PaymentMethod */}
-       <PaymentMethod />
+        <PaymentMethod />
 
-      {/* Select Address */}
-      <div className={stylesSelectAddress.box}>
+        {/* Select Address */}
+        <div className={stylesSelectAddress.box}>
           <div className={stylesSelectAddress.address}>
-            <span>Select Address</span> 
-            <span className={stylesSelectAddress.add}><u>ADD</u></span> 
+            <span>Select Address</span>
+            <span className={stylesSelectAddress.add}><u>ADD</u></span>
           </div>
           <div className={stylesSelectAddress.nameaddress}>
-            <span>123 M.2 BKK</span>
-            <span className={stylesSelectAddress.edit}><u>Edit</u></span> 
+            <span>{profileDetail.length > 0 && profileDetail[0].Member_Address}</span>
+            <span className={stylesSelectAddress.edit}><u>Edit</u></span>
           </div>
+        </div>
+        <div>
+          <button onClick={buyMePlz}>Gongz gonna make better</button>
         </div>
       </aside>
     </div>

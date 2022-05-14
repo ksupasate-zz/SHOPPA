@@ -4,18 +4,23 @@ import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import styles from '/styles/Creditcard.module.css';
 import { useCallback } from 'react';
+import { useCookies } from 'react-cookie';
 
 const Modal = ({ show, onClose }) => {
   const [isBrowser, setIsBrowser] = useState(false);
+
+  const [cookies, setCookie, removeCookie] = useCookies(['Member']);
+  // console.log(cookies['Member'])
   const clickMe = useCallback((e) => {
     e.preventDefault();
     console.log(e)
-
+    
     const upCredit = {
       Card_Name: e.target[0].value,
       Card_Number: e.target[2].value,
       VALID_THRU: e.target[4].value,
       CVC: e.target[6].value,
+      Member_ID : cookies['Member'],
     }
     console.log(upCredit)
     fetch('/api/api_creditcard', {
@@ -27,8 +32,9 @@ const Modal = ({ show, onClose }) => {
         return res.json()
       })
       .then((upCredit) => {
-        alert(upCredit.message)
+        alert("Success")
         console.log(upCredit.message)
+        window.location.replace("./cart");
       })
   }, [])
 
@@ -99,6 +105,17 @@ const Modal = ({ show, onClose }) => {
 };
 
 export default Modal;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
