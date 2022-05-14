@@ -13,6 +13,7 @@ import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import { useCookies } from 'react-cookie';
 import { useRouter } from 'next/router';
+import { useCookies } from 'react-cookie'
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -106,6 +107,9 @@ export default function AccountMenu() {
           </ListItemIcon>
           Settings
         </MenuItem>
+        {
+          (cookies['Member'])?
+            <>
         <a href="/" onClick={signout}>
         <MenuItem >
           <ListItemIcon>
@@ -114,6 +118,8 @@ export default function AccountMenu() {
           Logout
         </MenuItem>
         </a>
+        <>:""
+        }
       </Menu>
     </React.Fragment>
   );
