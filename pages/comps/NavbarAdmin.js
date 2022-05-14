@@ -4,7 +4,7 @@ import Link from "next/link";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import AccountMenu from "./Account";
+import AccountMenu from "./AccountAdmin";
 export default function Navbar() {
   return (
     <Nav className="nav justify-content-center text-center mb-3 mt-3">
