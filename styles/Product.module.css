@@ -1,31 +1,5 @@
-.orange{
-  background-color: #f93;
-  width: 100%;
-  height: auto;
-}
-.fix960{
-  max-width: 960px;
-  height: auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-  background-color: #fff;
-  margin-left: auto;
-  margin-right: auto;
-}
-.lh42{
-  line-height: 42px;
-}
-.slide{
-  width: 100%;
-  height: 300px;
-  overflow: hidden; 
-}
-.slide image{
-  width: 100%;
-  position: relative;
-  top: -80%;
-}
 
-.bar {
+.main {
   padding: 1%;
   background: linear-gradient(#e1e1ff ,white);
   height: 10rem; 
@@ -48,31 +22,17 @@
   float: right;
   margin-right: 5rem;
   clear: both;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 
 .btleft {
-  opacity: 0.9;
+  opacity: 0.5;
   /* top: -8rem; */
   display: inline-flex; 
   position: relative;
   clear: both;
   float: left;
-  resize: none;
-}
-
-.textarea {
-  resize: none;
-}
-
-.cm {
-  display: inline-flex;
-  font-weight: bold;
-}
-
-.cm1 {
-  margin-right: 9.55rem;
 }
 
 .space {
@@ -86,6 +46,7 @@
 }
 
 .image {
+  
   height: 360px;
   width: 600px;
   object-fit: cover;
@@ -101,14 +62,14 @@
 }
 
 .description {
-  margin-top: 5%;
+  margin-top: 20px;
   font-weight: bolder;
   text-align: center;
 }
 
 .desbox {
   width: 280px;
-  height: 162px;
+  height: 190px;
   overflow-y: scroll;
   clear: both;
 }
@@ -116,10 +77,6 @@
 .linedes {
   clear: both;
   width: 90%;
-}
-
-.quan {
-  margin-top: 6%;
 }
 
 .add2cart {
@@ -257,9 +214,6 @@
   margin-right: 6.55%;
   margin-bottom: 2%;
   width: 33%;
-  float: left;
-  object-fit: cover;
-  position: relative;
 }
 
 .view {
@@ -341,82 +295,6 @@
   text-align: center;
 }
 
-.main {
-  background: linear-gradient(#e1e1ff, white);
-  height: 50rem; 
-  margin: 0;
-  padding: 1%;
-  height: 100%;
-  clear: both;
-}
 
 
-.main1 {
-  background: linear-gradient(white, #e1e1ff );
-  height: 50rem; 
-  margin: 0;
-  height: 100%;
-  clear: both;
-}
 
-.Favyear {
-
-  font-size: 20px;
-  font-weight: bold;
-
-}
-.marginFav {
-  padding-top: 10px;
-  margin-left:350px;
-}
-
-.Membermargin {
-  padding-top:10px ;
-  margin-left: 260px;
-  font-size: 25px;
-  font-weight: bold;
-}
-.margin123 {
-  padding-top: 10px;
-  margin-left:15%;
-}
-
-.status {
-
-  border-radius: 8px;
-  background-color: #D1D1F2;
-  text-align: center;
-  width: 100px;
-  height: 40px;
-  color: white;
-  margin: auto;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  display: flex;
-}
-
-.status1 {
-
-  border-radius: 8px;
-  background-color: #F2D1E1;
-  text-align: center;
-  width: 100px;
-  height: 40px;
-  color: white;
-  margin: auto;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  display: flex;
-}
-
-.space1 {
-  display: inline;
-  margin-right: 15px;
-}
-
-.space2 {
-  display: inline;
-  margin-left: 15px;
-}

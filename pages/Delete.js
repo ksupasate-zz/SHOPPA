@@ -1,5 +1,5 @@
 import Card from '@mui/material/Card';
-import styles from "../styles/Home.module.css";
+import styles from "/styles/Home.module.css";
 import {useRouter} from "next/router";
 import { useCallback } from 'react'
 import { CardContent, Grid, TextField, Button, createTheme, ThemeProvider , Typography } from '@mui/material';
@@ -15,10 +15,16 @@ export default function Delete() {
             return res.json()
         })
             .then(() => {
+              
               alert("Success")
+              router.push('/Ban')
 
         })
     } , [id]) 
+
+    function getBack ( ) {
+        router.push('/Ban')
+    }
     return(
         <main className={styles.main}>
             <Card style={{maxWidth:450, margin:"0 auto", padding:"20px 5px"}} >
@@ -28,12 +34,12 @@ export default function Delete() {
                     <Grid container spacing={1}>
                         <Grid xs={12} item>
                         <ThemeProvider theme={theme}>
-                        <Button type="submit" variant='contained' color='neutral' fullWidth>Submit</Button>
+                        <Button type="submit" variant='contained' color='neutral' fullWidth >Submit</Button>
                         </ThemeProvider>
                         </Grid>
                         <Grid xs={12} item>
                         <ThemeProvider theme={theme}>
-                        <Button type="cancel" variant='outlined' color='neutral' fullWidth>Cancel</Button>
+                        <Button type="reset" variant='outlined' color='neutral' fullWidth onClick={getBack}>Cancel</Button>
                         </ThemeProvider>
                         </Grid>
 

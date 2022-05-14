@@ -2,6 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
@@ -11,16 +12,28 @@ import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
+import { useCookies } from 'react-cookie';
+import { useRouter } from 'next/router';
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const Router = useRouter();
   const open = Boolean(anchorEl);
+ 
+  const [cookies, setCookie , removeCookie] = useCookies(['Member' , 'Admin']);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
+  function signout(){
+    removeCookie('Member' , {path : '/'})
+    Router.push('#', {shallow:true})
+    console.log("Logout")
+
+    
+}
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -72,9 +85,11 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
+          <a href="/profile">
         <MenuItem>
           <Avatar /> Profile
         </MenuItem>
+        </a>
         {/* <MenuItem>
           <Avatar /> My account
         </MenuItem>
@@ -92,12 +107,30 @@ export default function AccountMenu() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem>
+        <a href="/Ban" >
+        <MenuItem >
           <ListItemIcon>
-            <Logout fontSize="small" />
+            <Logout fontSize="small"  />
+          </ListItemIcon>
+          Ban Menu
+        </MenuItem>
+        </a>
+        <a href="/Fav" >
+        <MenuItem >
+          <ListItemIcon>
+            <FavoriteIcon fontSize="small"  />
+          </ListItemIcon>
+          Favorite Menu
+        </MenuItem>
+        </a>
+        <a href="/" onClick={signout}>
+        <MenuItem >
+          <ListItemIcon>
+            <Logout fontSize="small"  />
           </ListItemIcon>
           Logout
         </MenuItem>
+        </a>
       </Menu>
     </React.Fragment>
   );

@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import styles from '../styles/Home.module.css'
+import styles from '/styles/Product.module.css';
 import { style } from '@mui/system'
 export default function Profile() {
     return (

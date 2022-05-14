@@ -24,9 +24,12 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "next": "12.1.5",
+    "next-auth": "^4.3.4",
+    "next-connect": "^0.12.2",
     "notistack": "^2.0.4",
     "react": "18.0.0",
     "react-bootstrap": "^2.3.1",
+    "react-cookie": "^4.1.1",
     "react-dom": "18.0.0",
     "table": "^6.8.0"
   },

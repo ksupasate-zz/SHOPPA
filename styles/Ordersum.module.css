@@ -1,0 +1,68 @@
+.box {
+	width: 35%;
+	height: 230px;
+    border-radius: 20px;
+	overflow: hidden;
+    padding-top: 10px;
+	margin-bottom: 10px;
+	background: #EBEBFA;
+	transition: all .6s ease;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.name {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.total {
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.total .price {
+    padding-left: 60%;
+    position: fix;
+}
+
+.total .unit {
+    padding-left: 1%;
+    position: fix;
+}
+
+.delivery {
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.delivery .fee {
+    padding-left: 60%;
+    position: fix;
+}
+
+.delivery .unit {
+    padding-left: 4%;
+    position: fix;
+}
+
+.line {
+    width: 95%;
+    margin: auto;
+}
+
+.sum {
+    padding-left: 30%;
+    padding-top: 15px;
+    position: fix;
+
+}
+
+.sum .price {
+    padding-left: 63%;
+}
+
+.sum .unit {
+    padding-left: 1%;
+}
+

@@ -3,13 +3,13 @@ import { Container, Table, TableBody, TableCell, TableContainer, TableHead, Tabl
 import { Pagination, PaginationItem, Stack, TablePagination,Grid } from '@mui/material';
 import UI from '@mui/material';
 import styles from '/styles/Home.module.css'
-import Op from './comps/operator'
+import Op from './comps/operatorBill'
 import Nav from './comps/NavbarAdmin'
 import { Main } from 'next/document';
 
 
 
-export default function TableBan() {
+export default function TableBillStatus() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [rows, setrows] = React.useState([]);
@@ -24,7 +24,7 @@ export default function TableBan() {
     setPage(0);
   };
   React.useEffect(() => {
-    fetch('/api/Banlist')
+    fetch('/api/BillList')
       .then((res) => res.json())
       .then((result) => {
         setrows(result)
@@ -37,21 +37,20 @@ export default function TableBan() {
         <Nav />
       </Stack>
       <div>
-        <div className={styles.Membermargin}>Members </div>
+        <div className={styles.Membermargin}>Bill</div>
         <Container alignItems="left" className={styles.margin123} >
           <Grid container
             direction="row"
             alignItem='flex-start'
             justifyContent='flex-start'>
           <Grid item xs={12}>
-          <TableContainer  sx={{ minWidth: 1300, borderRadius: '16px' }}  >
+          <TableContainer  sx={{ minWidth: 1000, borderRadius: '16px' }}  >
             <Table >
               <TableHead  >
                 <TableRow >
-                  <TableCell>Profile</TableCell>
-                  <TableCell align="left">Name</TableCell>
-                  <TableCell align="left">Telephone</TableCell>
-                  <TableCell align="center">Email</TableCell>
+                  <TableCell>No</TableCell>
+                  <TableCell align="left">Bill ID</TableCell>
+                  <TableCell align="left">Order ID</TableCell>
                   <TableCell align="center">Operation</TableCell>
                   <TableCell align="center">Status</TableCell>
                 </TableRow>
@@ -66,14 +65,11 @@ export default function TableBan() {
                         backgroundColor: (i % 2 == 1) ? '#E9E9FF' : '#f5f5fc',
                       }}
                     >
-                      <TableCell component="th" scope="row">
-                        <Avatar alt="Remy Sharp" src={row.Member_Image} sx={{ width: 65, height: 65 }} />
-                      </TableCell >
-                      <TableCell align="left">{row.Member_FName + ' ' + row.Member_LName}</TableCell>
-                      <TableCell align="left">{row.Member_Telephone}</TableCell>
-                      <TableCell align="center">{row.Member_Email}</TableCell>
-                      <TableCell align="center" ><Op id={row.Member_ID}/></TableCell>
-                      <TableCell ><div className={(row.Member_BanStatus == '0') ? styles.status : styles.status1}>{(row.Member_BanStatus == '0') ? 'Active' : 'Ban'}</div></TableCell>
+                   <TableCell align="left">{i+1}</TableCell>
+                      <TableCell align="left">{row.Bill_ID}</TableCell>
+                      <TableCell align="left">{row.Order_ID}</TableCell>
+                      <TableCell align="center">{<Op id={row.Bill_ID}/>}</TableCell>
+                      <TableCell ><div className={(row.Bill_Status == '0') ? styles.status : styles.status1}>{(row.Bill_Status == '0') ? '1' : '0'}</div></TableCell>
                     </TableRow>
                   ))}
               </TableBody>

@@ -1,0 +1,95 @@
+.card {
+  margin: 0.5rem;
+  flex: 1 1 auto;
+  position: relative;
+  width: 350px;
+  height: 300px;
+  display: inline-block;
+  overflow: hidden;
+  object-fit: cover;
+  position: relative;
+  margin-left: 4.91%;
+  margin-right: 4.91%;
+  margin-top: 8%;
+  border-radius: 5px;
+}
+.card1 {
+  margin: 0.5rem;
+  flex: 1 1 auto;
+  position: relative;
+  width: 350px;
+  height: 300px;
+  display: inline-block;
+  overflow: hidden;
+  object-fit: cover;
+  position: relative;
+  margin-left: 15.91%;
+  margin-right: 4.91%;
+  margin-top: 8%;
+  border-radius: 5px;
+}
+
+.image {
+  object-fit: cover;
+  border: 2px solid black;
+  transition: all 5s cubic-bezier(0.14, 0.96, 0.91, 0.6);
+}
+
+.info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: white;
+  padding: 1.5rem;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.card:hover .image {
+  transform: scale(1.2);
+}
+
+.card:hover .info {
+  opacity: 0.9;
+}
+
+.card1:hover .image {
+  transform: scale(1.2);
+}
+
+.card1:hover .info {
+  opacity: 0.9;
+}
+
+
+.center {
+  font-size: 2rem;
+  padding: 1.5rem;
+  background: rgba(0,0,0,0.2);
+  color: white;
+  font-weight: bolder;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center:hover {
+  cursor: none;
+}
+
+.text {
+  color: #fff;
+  font-size: xx-large;
+}
+
+.main {
+  background: linear-gradient( #e1e1ff ,white);
+  height: 10rem; 
+  margin: 0;
+  height: 100%;
+  clear: both;
+}
