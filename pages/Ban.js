@@ -32,7 +32,7 @@ export default function TableBan() {
   }, [])
 
   return (
-    <main>
+    <main className={styles.bar}>
       <Stack sx={{ p: 4 }}>
         <Nav />
       </Stack>

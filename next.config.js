@@ -8,3 +8,4 @@ module.exports = {
     domains: ['imgur.com', "images.unsplash.com", "static.nike.com"],
   },
 };
+

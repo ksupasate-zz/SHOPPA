@@ -34,6 +34,7 @@
   clear: both;
 }
 
+
 .topleft {
   padding-left: 7%;
   margin: 0;
@@ -367,18 +368,18 @@
 }
 .marginFav {
   padding-top: 10px;
-  margin-left:350px;
+  margin-left:10%;
 }
 
 .Membermargin {
   padding-top:10px ;
-  margin-left: 260px;
+  margin-left: 9%;
   font-size: 25px;
   font-weight: bold;
 }
 .margin123 {
   padding-top: 10px;
-  margin-left:15%;
+  margin-left: 7%;
 }
 
 .status {

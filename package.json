@@ -24,6 +24,7 @@
     "mysql2": "^2.3.3",
     "next": "12.1.5",
     "next-auth": "^4.3.4",
+    "nextjs": "^0.0.3",
     "notistack": "^2.0.5",
     "react": "17.0.2",
     "react-bootstrap": "^2.3.1",

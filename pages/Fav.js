@@ -6,6 +6,7 @@ import Stack from '@mui/material/Stack';
 import Sy from './comps/selectyear'
 import Sm from './comps/selectmonth'
 import Nav from './comps/NavbarAdmin';
+import Navbar from './comps/NavbarAdmin';
 
 
 export default function TableFav() {
@@ -18,11 +19,10 @@ export default function TableFav() {
       })
   }, [])
   return (
-    <main >
+    <main className={styles.bar}>
       <Stack sx={{ p: 4 }}>
         <Nav />
         <div>
-          <br />
           <br />
           <Stack direction="row" justifyContent="flex-start" alignItems="baseline" spacing={2} sx={{ ml: 20 }}>
             <div className={styles.Favyear}>Top 5 most favorite categoty:</div>
