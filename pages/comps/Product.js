@@ -44,7 +44,17 @@ export default function Home() {
       })
   }, [id])
 
-  const [cookies, setCookie, removeCookie] = useCookies(['Cart']);
+  const [Like, setLike] = useState([]);
+  useEffect(() => {
+      fetch('/api/profile/' + data).then((res) => {
+          return res.json()
+      }).then((data) => {
+          console.log(data)
+          setProfileDetail(data)
+      })
+  }, []);
+
+  const [cookies, setCookie, removeCookie] = useCookies(['Cart'],['Member']);
   // removeCookie('Cart')
   var x = []
   function addToCart() {
@@ -68,6 +78,7 @@ export default function Home() {
     )
     setCookie('Cart' , x , { path : '/'});
     }
+   
   console.log(cookies['Cart'])
   // Cart
   /*
@@ -140,9 +151,9 @@ export default function Home() {
               {/* <button className={styles.add2cart} type="button" onClick={alert}>
               Add to Cart
             </button> */}
-              <Checkbox
-                {...label}
-                icon={<FavoriteBorder />}
+              <Checkbox 
+                {...label }
+                icon={<FavoriteBorder  />}
                 checkedIcon={<Favorite />}
                 sx={{
                   color: red[800],
@@ -150,6 +161,7 @@ export default function Home() {
                     color: red[600],
                   },
                 }}
+                
               />
 
             </Stack>
