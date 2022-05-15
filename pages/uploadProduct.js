@@ -108,7 +108,6 @@ export default function register() {
             <img src={createObjectURL} />
               <TextField
                   label=""
-                  name=""
                   placeholder="Enter product name"
                   variant="outlined"
                   fullWidth
