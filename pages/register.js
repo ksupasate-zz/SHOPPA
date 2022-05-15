@@ -7,7 +7,7 @@ import { CardContent, Grid, TextField, Button, createTheme, ThemeProvider, Typog
 import { useCookies } from 'react-cookie';
 
 export default function register() {
-    const [cookies, setCookie, removeCookie] = useCookies(['Member', 'Admin']);
+    const [setCookie] = useCookies(['Member', 'Admin']);
     const clickMe = useCallback((e) => {
         console.log(e)
         const data = {

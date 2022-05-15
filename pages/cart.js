@@ -1,14 +1,10 @@
 import Navbar from "./comps/Navbar"
 import styles from '/styles/Cart.module.css';
-import Image from 'next/image'
 import stylesProductCard from '/styles/ProductCart.module.css';
 import stylesOrdersum from '/styles/Ordersum.module.css';
 import Stack from "@mui/material/Stack";
-import stylesPaymentMethod from '/styles/PaymentMethod.module.css';
 import stylesSelectAddress from '/styles/SelectAddress.module.css';
-import Creditcard from './comps/Creditcard'
 import React, { useEffect, useRef, useState } from "react";
-import { CreditCard, TransgenderTwoTone } from '@mui/icons-material';
 import PaymentMethod from "./comps/PaymentMethod";
 import { useCookies } from "react-cookie";
 import { useRouter } from "next/router";

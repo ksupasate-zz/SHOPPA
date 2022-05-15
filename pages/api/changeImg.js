@@ -1,18 +1,6 @@
-import { CompressOutlined } from "@mui/icons-material";
-import { NextApiRequest, NextApiResponse } from "next";
-import formidable from "formidable";
 import { useRouter } from "next/router";
-import { Router } from "express";
-
-
 
 const mysql = require("mysql2");
-const moment = require("moment")
-
-const timeStamp = moment().format("DD-MM-YYYY");
-const fs = require("fs")
-
-
 const db = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,

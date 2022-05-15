@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import styles from '../../styles/Home.module.css'
-import { style } from '@mui/system'
 import { useCookies } from 'react-cookie';
 import styles1 from '/styles/Cart.module.css';
 import { Card } from "antd";
-import { height } from "@mui/system";
 import { Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Image, Avatar, Grid } from '@mui/material';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 

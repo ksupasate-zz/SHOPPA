@@ -1,5 +1,3 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-
 const mysql = require('mysql2');
 
 const db = mysql.createPool({

@@ -22,15 +22,3 @@ export default function login(req, res) {
         }
     );
 }
-/*
-db.query( // Check Admin
-                    'SELECT Admin_ID FROM `Admin` WHERE `Admin_Email` = ? AND `Admin_Password` = ?', [data.Email , data.Password],
-                    function (err, results) {
-                        if(results[0]){
-                            res.status(200).json({check : "Admin" , id : results[0].Admin_ID})
-                        }else{
-                            res.status(200).json({check : "Can't Login"})
-                        }
-                    }
-                )
-*/

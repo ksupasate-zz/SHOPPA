@@ -1,7 +1,6 @@
 import Card from '@mui/material/Card'
 import styles from "../styles/Home.module.css"
 import { useCallback } from 'react'
-import Link from 'next/link'
 import { CardContent, Grid, TextField, Button, createTheme, ThemeProvider, Typography } from '@mui/material';
 
 import { useCookies } from 'react-cookie';

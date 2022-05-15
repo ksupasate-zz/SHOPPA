@@ -1,11 +1,9 @@
 import * as React from 'react';
 import styles from '/styles/PaymentMethod.module.css';
-import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { SettingsBackupRestoreTwoTone } from '@mui/icons-material';
 
 export default function BasicSelectProduct({ setBranchBank }) {
     const [bank, setBank] = React.useState('');

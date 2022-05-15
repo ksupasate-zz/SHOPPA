@@ -4,8 +4,6 @@ import Navbar from "./comps/Navbar";
 import { Card } from "antd";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { height } from "@mui/system";
-
 const { Meta } = Card;
 
 export default function Home() {

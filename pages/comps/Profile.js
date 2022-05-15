@@ -1,7 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
 import styles from '/styles/Product.module.css';
-import { style } from '@mui/system'
 import { useState, useEffect } from 'react';
 export default function Profile({ children }) {
 

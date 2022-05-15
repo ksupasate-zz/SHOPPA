@@ -1,5 +1,3 @@
-import { convertLegacyProps } from "antd/lib/button/button";
-
 const mysql = require("mysql2");
 const db = mysql.createPool({
   host: process.env.DB_HOST,

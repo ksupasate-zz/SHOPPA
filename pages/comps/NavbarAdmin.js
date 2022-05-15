@@ -1,9 +1,6 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
 import Link from "next/link";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import AccountMenu from "./AccountAdmin";
 import { useCookies } from "react-cookie"
 import { useState, useEffect } from "react";

@@ -16,7 +16,4 @@ export default function Pro(req, res) {
             res.status(200).json(result);
         }
     });
-    // console.log(results); // results contains rows returned by server
-
-
 }

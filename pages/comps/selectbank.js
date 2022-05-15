@@ -1,8 +1,6 @@
 import Card from "@mui/material/Card";
-import styles from "../../styles/Puth.module.css";
 import BasicSelect from "./selectbankcomp";
 import * as React from "react";
-import { useCallback } from "react";
 import { useState } from "react";
 
 import {
@@ -17,7 +15,7 @@ import {
 export default function register() {
 
   const [image, setImage] = useState(null);
-  const [createObjectURL, setCreateObjectURL] = useState(null);
+  const [setCreateObjectURL] = useState(null);
 
   const uploadToClient = (event) => {
     if (event.target.files && event.target.files[0]) {

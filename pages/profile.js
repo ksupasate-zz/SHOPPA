@@ -1,10 +1,9 @@
-import Head from "next/head"
-import Footer from "./comps/footer"
 import Navbar from "./comps/Navbar"
 import Profiles from "./comps/Profiles"
 import { useRouter } from 'next/router';
 import { useCookies } from 'react-cookie';
 import React, { useState, useEffect } from 'react'
+import styles from '/styles/Home.module.css';
 
 
 export default function profile() {
@@ -23,7 +22,7 @@ export default function profile() {
 
     return (
         <div>
-            <Navbar />
+            <div className={styles.bar}><Navbar /></div>
             <Profiles />
            
         </div>

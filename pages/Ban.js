@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Avatar } from '@mui/material';
 import { Pagination, PaginationItem, Stack, TablePagination, Grid } from '@mui/material';
-import UI from '@mui/material';
 import styles from '/styles/Home.module.css'
 import Op from './comps/operator'
 import Nav from './comps/NavbarAdmin'
-import { Main } from 'next/document';
 
 
 

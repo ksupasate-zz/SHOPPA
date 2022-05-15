@@ -1,5 +1,3 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-
 const mysql = require('mysql2');
 
 const db = mysql.createPool({
@@ -16,7 +14,7 @@ export default function wowza(req, res) {
         'SELECT * FROM `Members` WHERE Member_ID = ?', [id],
         function (err, results) {
             res.status(200).json(results)
-            console.log(results); // results contains rows returned by server
+            console.log(results); 
         }
     );
 }

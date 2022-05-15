@@ -16,7 +16,6 @@ export default function wowza(req, res) {
         'SELECT * FROM Admin WHERE Admin_ID = ?', [id],
         function (err, results) {
             res.status(200).json(results)
-            // console.log(results); // results contains rows returned by server
         }
     );
 }

@@ -18,17 +18,4 @@ export default function Pro(req, res) {
             }
         })
     });
-    // db.query("SELECT Review_Comment,Review_Image,Review_Score,Review_TS,Product_ID FROM Review WHERE Product_ID = ? ",[id], (err, result2) => {
-    //     if (err) {
-    //         console.log(err);
-    //         res.status(400).json(result);
-    //     } else {
-    //         res.status(400).json(result);
-    //     }
-    // });
-
 }
-
-// https://www.something.com/?id=asadoasdp
-// var id = $_GET['id'] 
-// WHERE Product_ID = ?  ", [id]

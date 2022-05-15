@@ -1,13 +1,12 @@
 import styles from '/styles/PaymentMethod.module.css';
 import Creditcard from './Creditcard'
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from 'next/router';
 import { useCookies } from 'react-cookie';
 
 export default function PaymentMethod({ setCardNumber }) {
   const [cookies, setCookie, removeCookie] = useCookies(['Member']);
   const [showModal, setShowModal] = useState(false);
-  const router = useRouter()
   let id
   if (cookies['Member']) {
     id = cookies['Member']
