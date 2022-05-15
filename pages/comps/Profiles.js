@@ -142,7 +142,7 @@ export default function Profile() {
             }
              {(profileProduct.length > 0) ?
                  profileProduct.map((row, i) => (
-                    <div>
+                    <div key={i}>
                         <Link href={"/ProductCard?id=" + row.Product_ID}>
                             <Card
                                 className={styles.card1}

@@ -6,7 +6,7 @@ import { CardContent, Grid, TextField, Button, createTheme, ThemeProvider, Typog
 
 import { useCookies } from 'react-cookie';
 
-export default function login() {
+export default function LoginAdmin() {
 
     const [cookies, setCookie, removeCookie] = useCookies(['Member', 'Admin']);
 

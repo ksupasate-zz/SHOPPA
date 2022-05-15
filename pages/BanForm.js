@@ -4,11 +4,10 @@ import BasicSelect from "./comps/selectBan";
 import { useCallback } from 'react'
 import { useRouter } from "next/router";
 import { CardContent, Grid, TextField, Button, createTheme, ThemeProvider, Typography } from '@mui/material';
-import { Component } from 'react';
-export default function register() {
-  const router = useRouter()
-  const { id } = router.query
-  const clickMe = useCallback((e) => {
+export default function BanForm() {
+  const Router = useRouter()
+  const { id } = Router.query
+  const ClickMe = useCallback((e) => {
     e.preventDefault();
     console.log(e)
 
@@ -37,7 +36,7 @@ export default function register() {
       <Card style={{ maxWidth: 450, margin: "0 auto", padding: "20px 5px" }} >
         <CardContent >
           <Typography gutterBottom variant="h4">Ban Details</Typography>
-          <form action="" method="post" onSubmit={clickMe}>
+          <form action="" method="post" onSubmit={ClickMe}>
             <Grid container spacing={1}>
               <Grid xs={12} item>
                 <BasicSelect banid={id}></BasicSelect>

@@ -21,7 +21,7 @@ import { Rule } from "@mui/icons-material";
 
 
 
-export default function register() {
+export default function UploadProduct() {
     const [cookies, setCookie, removeCookie] = useCookies(['Member', 'Cart']);
     const [Path , setPath] = useState("");
     const [PID , setPID] = useState([]);

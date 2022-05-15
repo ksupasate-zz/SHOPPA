@@ -38,7 +38,7 @@ export default function BasicSelectProduct({ setBranchBank }) {
                             onChange={handleChange}
                         >
                             {log.map((row, i) => (
-                                <MenuItem value={row.BranchBank_ID}>{row.BranchBank_Name}</MenuItem>
+                                <MenuItem value={row.BranchBank_ID} key={i}>{row.BranchBank_Name}</MenuItem>
 
                             ))}
                         </Select>

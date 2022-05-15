@@ -7,7 +7,7 @@ import { useCookies } from 'react-cookie';
 import React, { useState, useEffect } from 'react'
 
 
-export default function profile() {
+export default function Profile() {
     const [cookies, setCookie, removeCookie] = useCookies(['Member', 'Admin']);
     const Router = useRouter();
     React.useEffect(() => {

@@ -14,7 +14,7 @@ import {
   ThemeProvider,
   Typography,
 } from "@mui/material";
-export default function register() {
+export default function Selectbank() {
 
   const [image, setImage] = useState(null);
   const [createObjectURL, setCreateObjectURL] = useState(null);

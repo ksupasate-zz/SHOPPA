@@ -6,7 +6,7 @@ import BasicSelect from ".//comps/select";
 import { CardContent, Grid, TextField, Button, createTheme, ThemeProvider, Typography } from '@mui/material';
 import { useCookies } from 'react-cookie';
 
-export default function register() {
+export default function Register() {
     const [cookies, setCookie, removeCookie] = useCookies(['Member', 'Admin']);
     const clickMe = useCallback((e) => {
         console.log(e)

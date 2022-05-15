@@ -15,6 +15,7 @@ import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import { useCookies } from 'react-cookie';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -83,11 +84,13 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <a href="#">
+        <Link href="#">
+        <a>
           <MenuItem>
             <Avatar /> Profile
           </MenuItem>
         </a>
+        </Link>
         {/* <MenuItem>
           <Avatar /> My account
         </MenuItem>
@@ -105,7 +108,8 @@ export default function AccountMenu() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <a href="/Ban" >
+        <Link href="/Ban">
+        <a>
           <MenuItem >
             <ListItemIcon>
               <Logout fontSize="small" />
@@ -113,7 +117,9 @@ export default function AccountMenu() {
             Ban Menu
           </MenuItem>
         </a>
-        <a href="/Fav" >
+        </Link>
+        <Link href="/Fav">
+        <a>
           <MenuItem >
             <ListItemIcon>
               <FavoriteIcon fontSize="small" />
@@ -121,7 +127,9 @@ export default function AccountMenu() {
             Favorite Menu
           </MenuItem>
         </a>
-        <a href="/BillStatus" >
+        </Link>
+        <Link href="/BillStatus">
+        <a>
           <MenuItem >
             <ListItemIcon>
               <ReceiptLongIcon fontSize="small" />
@@ -129,7 +137,9 @@ export default function AccountMenu() {
             Bill
           </MenuItem>
         </a>
-        <a href="/" onClick={signout}>
+        </Link>
+        <Link href="/" onClick={signout}>
+        <a>
           <MenuItem >
             <ListItemIcon>
               <Logout fontSize="small" />
@@ -137,6 +147,7 @@ export default function AccountMenu() {
             Logout
           </MenuItem>
         </a>
+        </Link>
       </Menu>
     </React.Fragment>
   );

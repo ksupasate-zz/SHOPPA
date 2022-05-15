@@ -29,7 +29,7 @@ export default function Home() {
         <h1>Accessories</h1>
       </div>
       {data.map((row, i) => (
-        <div>
+        <div key={i}>
           <Link href={"/ProductCard?id=" + row.Product_ID}>
             <Card
               className={styles.card}

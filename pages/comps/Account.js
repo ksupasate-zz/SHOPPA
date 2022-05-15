@@ -6,13 +6,11 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import { useCookies } from 'react-cookie';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -82,11 +80,13 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <a href="/profile">
+        <Link href = "/profile">
+        <a>
           <MenuItem>
             <Avatar /> Profile
           </MenuItem>
         </a>
+        </Link>
         {/* <MenuItem>
           <Avatar /> My account
         </MenuItem>
@@ -107,7 +107,8 @@ export default function AccountMenu() {
         {
           (cookies['Member']) ?
             <>
-              <a href="/" onClick={signout}>
+            <Link href="/">
+              <a  onClick={signout}>
                 <MenuItem >
                   <ListItemIcon>
                     <Logout fontSize="small" />
@@ -115,6 +116,7 @@ export default function AccountMenu() {
                   Logout
                 </MenuItem>
               </a>
+              </Link>
             </> : ""
         }
       </Menu>

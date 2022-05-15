@@ -6,7 +6,7 @@ import { useCallback } from 'react'
 import { CardContent, Grid, TextField, Button, createTheme, ThemeProvider, Typography  } from '@mui/material';
 import { Component } from 'react';
 import BasicRating from './comps/star'
-export default function register() {
+export default function Comment() {
 
   const clickMe = useCallback((e) => {
     e.preventDefault();

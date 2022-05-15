@@ -5,7 +5,6 @@ import UI from '@mui/material';
 import styles from '/styles/Home.module.css'
 import Op from './comps/operatorBill'
 import Nav from './comps/NavbarAdmin'
-import { Main } from 'next/document';
 
 
 

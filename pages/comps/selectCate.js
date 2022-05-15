@@ -34,7 +34,7 @@ export default function BasicSelectProduct() {
                     onChange={handleChange}
                 >
                     {log.map((row, i) => (
-                        <MenuItem value={row.Category_ID}>{row.Category_Name}</MenuItem>
+                        <MenuItem value={row.Category_ID} key={i}>{row.Category_Name}</MenuItem>
                     ))}
                 </Select>
             </FormControl>
