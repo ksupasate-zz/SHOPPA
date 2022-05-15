@@ -57,7 +57,6 @@ export default function order(req, res) {
                                             'UPDATE `Members` SET Member_Score = Member_Score + ? WHERE Member_ID = ?' , 
                                             ['50', data.Member_ID], 
                                             function (err, result2) {
-                                                console.log(Member_Score)
                                             }
                                         )
                                     )
