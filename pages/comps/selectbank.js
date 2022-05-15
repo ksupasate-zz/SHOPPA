@@ -16,33 +16,7 @@ import {
 } from "@mui/material";
 export default function Selectbank() {
 
-  const [image, setImage] = useState(null);
-  const [createObjectURL, setCreateObjectURL] = useState(null);
-
-  const uploadToClient = (event) => {
-    if (event.target.files && event.target.files[0]) {
-      const i = event.target.files[0];
-
-      setImage(i);
-      setCreateObjectURL(URL.createObjectURL(i));
-    }
-  };
-
-  const uploadToServer = async (event) => {
-    const body = new FormData();
-    body.append("file", image);
-    console.log(body);
-    fetch("../api/upload", {
-      method: "POST",
-      body,
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data, "EIEIEIEIEIEI");
-      });
-  };
+  
 
   return (
     <Card style={{ maxWidth: 400, margin: "0 auto", padding: "20px 5px", backgroundColor: "#e1e1ff" }}>
@@ -50,7 +24,7 @@ export default function Selectbank() {
         {/* <Typography gutterBottom variant="h4">
             Select Bank
           </Typography> */}
-        <form action="" method="post" onSubmit={clickMe}>
+       
           <Grid xs={12} item>
             <BasicSelect></BasicSelect>
           </Grid>
