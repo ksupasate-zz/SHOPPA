@@ -76,8 +76,8 @@ export default function order(req, res) {
                                     let Track = Math.floor(Math.random() * 9000000000) + 1000000000;
                                     let FinalTrack = "TH"+Track.toString()
                                     db.query(
-                                        'INSERT INTO `Bill`(`Bill_ID`, `Order_ID`, `Bill_Track`) VALUES (?,?,?)',
-                                        [FinalBill_ID,FinalOrder_ID,FinalTrack],
+                                        'INSERT INTO `Bill`(`Bill_ID`, `Order_ID`, `Bill_Track` , `Member_ID`) VALUES (?,?,?,?)',
+                                        [FinalBill_ID,FinalOrder_ID,FinalTrack,data.Member_ID],
                                         function (err, Finally) {
                                             res.status(200).json(Finally)
                                         }

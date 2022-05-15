@@ -88,7 +88,7 @@ export default function Cart() {
       }).then((res) => {
         return res.json()
       }).then((finaldata) => {
-        // removeCookie('Cart')
+        removeCookie('Cart')
         Router.push('/profile')
       })
     } else {

@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Puth.module.css";
 
 import { useCookies } from "react-cookie";
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import * as React from 'react';
 import Table from '@mui/material/Table';
@@ -13,31 +13,41 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
+import { useRouter } from 'next/router'
+
 export default function Home() {
-    const [cookies, setCookie, removeCookie] = useCookies(['Member', 'Cart']);
-    if(cookies['Member']){
-        const data = cookies['Member']
-    }
-    const [profileDetail, setProfileDetail] = useState([]);
+    const [cookies, setCookie, removeCookie] = useCookies(['Member']);
+
+    const router = useRouter()
+    const data = router.query
+    const [Productp, setProductp] = useState([]);
+    const [billDetail, setbillDetail] = useState({});
+    const [ProfileDetail, setProfileDetail] = useState([]);
     const [printWOW, setPrint] = useState("Print");
+
     useEffect(() => {
-        fetch('/api/profile/' + data).then((res) => {
+        if(!data.id)return
+        fetch('/api/Bill/' + data.id).then((res) => {
             return res.json()
-        }).then((data) => {
-            console.log(data)
-            setProfileDetail(data) 
+        }).then((_data) => {
+            console.log(55555,_data)
+            //console.log(data.results[0].bill_ID)
+            setbillDetail(_data)
+        })
+    }, [data]);
+
+    useEffect(() => {
+        fetch('/api/profile/' + cookies['Member']).then((res) => {
+            return res.json()
+        }).then((data0) => {
+            // console.log(data)
+            setProfileDetail(data0)
+            
         })
     }, []);
-    
-    const cart = cookies['Cart']
-    console.log(cart)
-    let a = 0, sum = 0
-    if (cookies['Cart']) {
-        while (cookies['Cart'][a]) {
-            sum += cookies['Cart'][a].price
-            a++
-        }
-    }
+    let sum = 0
+
+
     return (
         <div className={styles.container}>
             <Head>
@@ -68,23 +78,18 @@ export default function Home() {
                         <h4>BILL ID</h4>
                     </div>
 
-                    <p className={styles.info}>BL1234567</p>
+                    <p className={styles.info}>{(billDetail.results && billDetail.results.length > 0) ? billDetail.results[0].Bill_ID : ''}</p>
                     <hr className={styles.hr_med} />
                     <div className={styles.puthfix}>
                         <h4>DATE ISSUED</h4>
                     </div>
 
-                    <p className={styles.info}>24 Oct, 2021</p>
+                    <p className={styles.info}>{(billDetail.results && billDetail.results.length > 0) ? billDetail.results[0].Bill_Date.substr(0, 10) : ''}</p>
                     <hr className={styles.hr_small} />
                     <div className={styles.puthfix}>
-                        <h4>DATE DUE</h4>
+                        <h4>DATE PRINTED</h4>
                     </div>
-                    <p className={styles.info}>12 Nov, 2021</p>
-                    <hr className={styles.hr_small} />
-                    <div className={styles.puthfix}>
-                        <h4>CATEGORY</h4>
-                    </div>
-                    <p className={styles.info}>Shoes</p>
+                    <p className={styles.info}>{new Date().toISOString().substr(0, 10)}</p>
                 </div>
                 <div className={styles.half_right_div}>
                     <hr className={styles.hr_big} />
@@ -93,37 +98,31 @@ export default function Home() {
                     <div className={styles.puthfix}>
                         <h4>CUSTOMER NAME</h4>
                     </div>
-                    <p className={styles.info}>{profileDetail.length > 0 && profileDetail[0].Member_FName + " " + profileDetail[0].Member_LName}</p>
+                    <p className={styles.info}>{ProfileDetail.length > 0 && ProfileDetail[0].Member_FName + " " + ProfileDetail[0].Member_LName}</p>
                     <hr className={styles.hr_invis} />
                     <div className={styles.puthfix}>
                         <h4>PHONE</h4>
                     </div>
-                    <p className={styles.info}>{profileDetail.length > 0 && profileDetail[0].Member_Telephone}</p>
+                    <p className={styles.info}>{ProfileDetail.length > 0 && ProfileDetail[0].Member_Telephone}</p>
                     <hr className={styles.hr_invis} />
 
                     <div className={styles.puthfix}>
                         <h4>CUSTOMER ID</h4>
                     </div>
-                    <p className={styles.info}>{profileDetail.length > 0 && profileDetail[0].Member_ID}</p>
+                    <p className={styles.info}>{ProfileDetail.length > 0 && ProfileDetail[0].Member_ID}</p>
                     <hr className={styles.hr_invis} />
 
                     <div className={styles.puthfix}>
                         <h4>BANK</h4>
                     </div>
-                    <p className={styles.info}>Kasikorn Bank</p>
-                    <hr className={styles.hr_small} />
-
-                    <div className={styles.puthfix}>
-                        <h4>BILL ID</h4>
-                    </div>
-                    <p className={styles.info}>BL1234567</p>
+                    <p className={styles.info}>{(billDetail.results2 && billDetail.results2.length > 0) ? billDetail.results2[0].BranchBank_Name : ''}</p>
                     <hr className={styles.hr_small} />
 
                     <div className={styles.puthfix}>
                         <h4>ADDRESS</h4>
                     </div>
                     <p className={styles.info}>
-                        {profileDetail.length > 0 && profileDetail[0].Member_Address}
+                        {ProfileDetail.length > 0 && ProfileDetail[0].Member_Address}
                     </p>
                 </div>
                 <hr className={styles.hr_big} />
@@ -134,29 +133,32 @@ export default function Home() {
                     <TableContainer component={Paper}>
                         <Table sx={{ minWidth: 700 }} aria-label="spanning table">
                             <TableHead>
-                            <TableRow>
-                                <TableCell align="center" colSpan={5}>
-                                Details
-                                </TableCell>
-                                <TableCell align="right" colSpan={3}>Price</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell colSpan={1}>Description</TableCell>
-                                <TableCell colSpan={5} align="center">Quantity</TableCell>
-                                <TableCell colSpan={2}align="right">Sum</TableCell>
-                            </TableRow>
+                                <TableRow>
+                                    <TableCell align="center" colSpan={5}>
+                                        Details
+                                    </TableCell>
+                                    <TableCell align="right" colSpan={3}>Price</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell colSpan={1}>Description</TableCell>
+                                    <TableCell colSpan={5} align="center">Quantity</TableCell>
+                                    <TableCell colSpan={2} align="right">Sum</TableCell>
+                                </TableRow>
                             </TableHead>
                             <TableBody>
-                            {(cart) && cart.map((row, i) => (
-                                <TableRow rowSpan={1} key={i}>
-                                <TableCell colSpan={1} align="left">{row.name}</TableCell>
-                                <TableCell colSpan={5} align="center">{row.qty}</TableCell>
-                                <TableCell colSpan={2} align="right">{row.price}</TableCell>
-                                </TableRow>
-                            ))}
+                                {
+                                    (billDetail.results3) && billDetail.results3.map((row, i) => (
+                                        sum += row.OrderItem_Price * row.OrderItem_Total,
+                                            //setProductp(datadata)
+                                            <TableRow rowSpan={1} key={i}>
+                                                <TableCell colSpan={1} align="left">{row.Product_Name}</TableCell>
+                                                <TableCell colSpan={5} align="center">{row.OrderItem_Total}</TableCell>
+                                                <TableCell colSpan={2} align="right">{row.OrderItem_Price}</TableCell>
+                                            </TableRow>))
+                                }
                             </TableBody>
                             <TableRow>
-                                
+
                                 <TableCell colSpan={6} ></TableCell>
                                 <TableCell colSpan={1} >Subtotal</TableCell>
                                 <TableCell align="right">{sum}</TableCell>
@@ -164,17 +166,17 @@ export default function Home() {
                             <TableRow>
                                 <TableCell colSpan={6}></TableCell>
                                 <TableCell align="left" colSpan={1}>Tax 7%</TableCell>
-                                <TableCell align="right">{sum * 0.07}</TableCell>
+                                <TableCell align="right">{Math.floor(sum * 0.07)}</TableCell>
                             </TableRow>
                             <TableRow>
                                 <TableCell colSpan={6}></TableCell>
                                 <TableCell align="left" colSpan={1}>Total</TableCell>
-                                <TableCell colSpan={3} align="right">{sum + sum * 0.07}</TableCell>
+                                <TableCell colSpan={3} align="right">{ sum + Math.floor(sum * 0.07)}</TableCell>
                             </TableRow>
                         </Table>
-                        </TableContainer>
+                    </TableContainer>
                     {/*  */}
-                    
+
                     <br></br>
                 </div>
                 <hr className={styles.hr_big} />
@@ -207,13 +209,15 @@ export default function Home() {
                     <p className={styles.last_info}>https://kmutt.in.th/Shoppa</p>
                     <hr className={styles.hr_big} />
                 </div>
-                {(printWOW)&&
-                <button onClick={() => {setPrint("");setTimeout(window.print,1)}}> {printWOW} </button>}
-            </main>
+                {
+                    (printWOW) &&
+                    <button onClick={() => { setPrint(""); setTimeout(window.print, 1) }}> {printWOW} </button>
+                }
+            </main >
 
             <footer className={styles.footer}></footer>
-            
 
-        </div>
+
+        </div >
     )
 }
