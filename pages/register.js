@@ -41,8 +41,8 @@ export default function register() {
     }, [])
 
     return (
-        <main className={styles.main}>
-            <Card style={{ maxWidth: 450, margin: "0 auto", padding: "20px 5px" }} >
+        <main className={styles.bgr}>
+            <Card style={{ maxWidth: 500, margin: "0 auto", padding: "20px 5px" }} >
                 <CardContent >
                     <Typography gutterBottom variant="h4">Sign Up</Typography>
                     <form action="" method="post" onSubmit={clickMe}>

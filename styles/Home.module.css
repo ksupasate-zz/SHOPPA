@@ -351,6 +351,32 @@
   clear: both;
 }
 
+.bgc {
+  padding: 24.85%;
+  background-color: #b1b1ff;
+  margin: 0;
+  height: 100%;
+  clear: both;
+}
+
+.bgr {
+  padding: 2%;
+  background-color: #b1b1ff;
+  margin: 0;
+  height: 100%;
+  clear: both;
+}
+
+.bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5rem solid #d2d2ff;
+  border-radius: 1rem;
+  clear: both;
+}
+
 
 .main1 {
   background: linear-gradient(white, #e1e1ff );

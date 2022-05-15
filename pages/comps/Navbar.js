@@ -24,6 +24,9 @@ export default function Navbar() {
         li {
           text-align: center;
         }
+        .list-inline-item:hover {
+          font-weight: 600;
+        }
         .navbar-brand {
           font-weight: 650;
           font-size: 25px;

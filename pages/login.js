@@ -42,7 +42,8 @@ export default function login() {
     }, [])
 
     return (
-        <main className={styles.main}>
+        <main className={styles.bgc}>
+            <div className={styles.bg}>
         <Card style={{maxWidth:450, margin:"0 auto", padding:"20px 5px"}} >
             <CardContent >
                 <Typography gutterBottom variant="h4">Login</Typography>
@@ -73,6 +74,7 @@ export default function login() {
 
             </CardContent>
         </Card>
+        </div>
     </main>
 
     );

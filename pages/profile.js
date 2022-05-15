@@ -4,6 +4,7 @@ import Navbar from "./comps/Navbar"
 import Profiles from "./comps/Profiles"
 import { useRouter } from 'next/router';
 import { useCookies } from 'react-cookie';
+import styles from "../styles/Home.module.css"
 import React, { useState, useEffect } from 'react'
 
 
@@ -19,9 +20,11 @@ export default function profile() {
     }, []);
     
     return (
+        <main className={styles.main}>
         <div>
             <Navbar />
             <Profiles />
         </div>
+        </main>
     )
 }
