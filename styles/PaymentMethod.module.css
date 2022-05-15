@@ -1,13 +1,13 @@
 .box {
-	width: 35%;
-	height: 120px;
+    width: 35%;
+    height: auto;
     border-radius: 20px;
-	overflow: hidden;
+    overflow: hidden;
     padding-top: 10px;
-	margin-bottom: 10px;
-	background: #EBEBFA;
-	transition: all .6s ease;
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-bottom: 10px;
+    background: #EBEBFA;
+    transition: all .6s ease;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .paymentmethod {
@@ -16,10 +16,27 @@
 }
 
 .paymentmethod .add {
-    padding-top: 30px;
-    padding-left: 50%;
+    padding-left: 55%;
+    position: relative;
+    display: inline-block;
 }
 
+.boxy {
+    width: 35%;
+    height: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    background: #EBEBFA;
+    transition: all .6s ease;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 20px;
+}
+
+.selectBank {
+    background-color: rgba(255, 255, 255, .8);
+}
 
 .visa {
     padding-top: 15px;
@@ -28,13 +45,13 @@
 }
 
 .visa .edit {
-    padding-left: 65%;
- 
+    padding-left: 72%;
+    position: relative;
+    display: inline-block;
+
 }
 
 .click {
     cursor: pointer;
-        
+
 }
-
-

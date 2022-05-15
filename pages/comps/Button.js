@@ -4,7 +4,7 @@ import { SnackbarProvider, useSnackbar } from 'notistack';
 import { styled } from '@mui/material/styles';
 import { deepPurple, purple } from '@mui/material/colors';
 
-function MyApp() {
+function MyApp({ children, onClick }) {
   const { enqueueSnackbar } = useSnackbar();
 
   const handleClick = () => {
@@ -14,19 +14,20 @@ function MyApp() {
   const handleClickVariant = (variant) => () => {
     // variant could be success, error, warning, info, or default
     enqueueSnackbar('This product has been added to cart', { variant });
+    onClick()
   };
 
   return (
     <React.Fragment>
-      <ColorButton variant="contained" onClick={handleClickVariant('success')}>Add to Cart</ColorButton>
+      <ColorButton variant="contained" onClick={handleClickVariant('success')}>{children}</ColorButton>
     </React.Fragment>
   );
 }
 
-export default function IntegrationNotistack() {
+export default function IntegrationNotistack({ children, onClick }) {
   return (
     <SnackbarProvider maxSnack={3}>
-      <MyApp />
+      <MyApp onClick={onClick}>{children}</MyApp>
     </SnackbarProvider>
   );
 }

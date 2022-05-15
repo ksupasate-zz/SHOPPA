@@ -22,10 +22,10 @@ export default function BasicSelect() {
           value={gender}
           label="Gender"
           onChange={handleChange}
-          name = "Gender"
+          name="Gender"
         >
-          <MenuItem value = "M">Male</MenuItem>
-          <MenuItem value = "F">Female</MenuItem>
+          <MenuItem value="M">Male</MenuItem>
+          <MenuItem value="F">Female</MenuItem>
         </Select>
       </FormControl>
     </Box>

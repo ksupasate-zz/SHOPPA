@@ -1,8 +1,7 @@
-
 .main {
   padding: 1%;
-  background: linear-gradient(#e1e1ff ,white);
-  height: 10rem; 
+  background: linear-gradient(#e1e1ff, white);
+  height: 10rem;
   margin: 0;
   height: 100%;
   clear: both;
@@ -29,7 +28,7 @@
 .btleft {
   opacity: 0.5;
   /* top: -8rem; */
-  display: inline-flex; 
+  display: inline-flex;
   position: relative;
   clear: both;
   float: left;
@@ -39,14 +38,13 @@
   margin: 10px;
 }
 
-.comment1
-{
+.comment1 {
   clear: both;
   padding-right: 5%;
 }
 
 .image {
-  
+
   height: 360px;
   width: 600px;
   object-fit: cover;
@@ -88,7 +86,7 @@
   background-color: #C2C2EE;
   border: none;
   border-radius: 10px;
-  
+
 }
 
 .add2cart:hover {
@@ -96,7 +94,9 @@
   cursor: pointer;
 }
 
-.add , .sub, .num{
+.add,
+.sub,
+.num {
   font-size: 1rem;
   width: 2rem;
   height: 2rem;
@@ -104,7 +104,7 @@
   border: none;
   border-radius: 5px;
   position: relative;
-  top: 0.45rem; 
+  top: 0.45rem;
   align-items: center;
 }
 
@@ -112,7 +112,8 @@
   padding-right: 10px;
 }
 
-.add:hover , .sub:hover {
+.add:hover,
+.sub:hover {
   cursor: pointer;
   background-color: gray;
 }
@@ -125,7 +126,7 @@
   position: relative;
   font-weight: bold;
   text-align: center;
-  color:#000;
+  color: #000;
 }
 
 .val:hover {
@@ -139,40 +140,46 @@
 }
 
 /*Component Profile*/
-.profile{
+.profile {
   float: left;
   width: 100%;
   height: auto;
   margin-right: 13.5rem;
   text-align: center;
 }
-.profile img{
+
+.profile img {
   width: 90px;
   height: 90px;
   border-radius: 50%;
   margin-bottom: 1rem;
   border: 6px solid rgba(0, 0, 0, .3);
 }
-.profileDetail{
+
+.profileDetail {
   width: 55%;
   height: auto;
   margin-left: auto;
   margin-right: auto;
 }
-.profile p{
+
+.profile p {
   color: #555;
 }
-.profile h4{
+
+.profile h4 {
   font-weight: 700;
 }
-.profileLeft{
+
+.profileLeft {
   width: 50%;
   height: auto;
   display: inline-block;
   vertical-align: middle;
   border-right: 2px solid #000;
 }
-.profileRight{
+
+.profileRight {
   width: 50%;
   height: auto;
   display: inline-block;
@@ -196,7 +203,7 @@
   object-fit: fill;
 }
 
-.contentStyle img{
+.contentStyle img {
   width: 100%;
   position: relative;
 }
@@ -209,7 +216,7 @@
 }
 
 .card {
-  display:inline-block;
+  display: inline-block;
   margin-left: 6.55%;
   margin-right: 6.55%;
   margin-bottom: 2%;
@@ -225,7 +232,7 @@
   font-size: large;
   border-width: 3px;
   margin-top: 1%;
-  
+
 }
 
 .view:hover {
@@ -245,9 +252,9 @@
   border-radius: 20px;
 }
 
-.our > a {
+.our>a {
   opacity: 60%;
-  
+
 }
 
 .center {
@@ -263,7 +270,8 @@
   cursor: none;
 }
 
-.our:hover, .cate:hover {
+.our:hover,
+.cate:hover {
   box-shadow: 0 0 3px black;
 }
 
@@ -280,7 +288,7 @@
   border-radius: 5px;
 }
 
-.cate > a {
+.cate>a {
   opacity: 60%;
   top: -50%;
   left: -50%;
@@ -294,7 +302,3 @@
   display: block;
   text-align: center;
 }
-
-
-
-

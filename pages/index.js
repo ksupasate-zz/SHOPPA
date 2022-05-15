@@ -9,13 +9,13 @@ import CategoryCard from "./comps/CategoryCard";
 export default function Home() {
   return (
     <div>
-      
-    <div className={styles.bar}><Navbar /></div>
-    <Main/>
-    <CategoryCard/>
-    <Footer />  
-    
-    
+
+      <div className={styles.bar}><Navbar /></div>
+      <Main />
+      <CategoryCard />
+      <Footer />
+
+
     </div>
   )
 }

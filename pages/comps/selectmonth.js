@@ -14,7 +14,7 @@ export default function SelectVariants() {
 
     return (
         <Stack>
-            <FormControl variant="standard" sx={{  minWidth: 120 }} size="small">
+            <FormControl variant="standard" sx={{ minWidth: 120 }} size="small">
                 <InputLabel id="demo-simple-select-standard-label">Month</InputLabel>
                 <Select
                     labelId="demo-simple-select-standard-label"

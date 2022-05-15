@@ -16,13 +16,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .popup-inner {
-    position: relative
-    padding 32px;
+    position: relative padding 32px;
     width: 100%;
     max-width: 640px;
 }
-

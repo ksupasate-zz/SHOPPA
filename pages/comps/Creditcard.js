@@ -4,9 +4,13 @@ import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import styles from '/styles/Creditcard.module.css';
 import { useCallback } from 'react';
+import { useCookies } from 'react-cookie';
 
 const Modal = ({ show, onClose }) => {
   const [isBrowser, setIsBrowser] = useState(false);
+
+  const [cookies, setCookie, removeCookie] = useCookies(['Member']);
+  // console.log(cookies['Member'])
   const clickMe = useCallback((e) => {
     e.preventDefault();
     console.log(e)
@@ -16,6 +20,7 @@ const Modal = ({ show, onClose }) => {
       Card_Number: e.target[2].value,
       VALID_THRU: e.target[4].value,
       CVC: e.target[6].value,
+      Member_ID: cookies['Member'],
     }
     console.log(upCredit)
     fetch('/api/api_creditcard', {
@@ -52,7 +57,7 @@ const Modal = ({ show, onClose }) => {
 
   const modalContent = show ? (
     <main className={styles.popup}>
-      <Card style={{ maxWidth: 450, margin: "0 auto", padding: "20px 5px",  borderRadius: '16px'}} >
+      <Card style={{ maxWidth: 450, margin: "0 auto", padding: "20px 5px", borderRadius: '16px' }} >
         <CardContent >
           <Typography gutterBottom variant="h4">Card Information</Typography>
           <form action="" method="post" onSubmit={clickMe}>
@@ -100,14 +105,3 @@ const Modal = ({ show, onClose }) => {
 };
 
 export default Modal;
-
-
-
-
-
-
-
-
-
-
-

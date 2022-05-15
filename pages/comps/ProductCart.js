@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import styles from '/styles/ProductCart.module.css';
 import Stack from "@mui/material/Stack";
-
+import { useCookies } from "react-cookie"
 var clicks = 0;
 
 export function plus() {
@@ -16,10 +16,9 @@ export function minus() {
   clicks = (clicks <= 0) ? 0 : clicks;
   document.getElementById("clicks").innerHTML = clicks;
 }
-
+const [cookies, setCookie, removeCookie] = useCookies(['Cart']);
 
 export default function ProductCart() {
-
   return (
     <div className="container-fluid">
       <div className='d-grid gap-4'>
@@ -56,7 +55,6 @@ export default function ProductCart() {
     </div>
   )
 }
-
 
 
 

@@ -1,9 +1,10 @@
-.orange{
+.orange {
   background-color: #f93;
   width: 100%;
   height: auto;
 }
-.fix960{
+
+.fix960 {
   max-width: 960px;
   height: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, .5);
@@ -11,54 +12,63 @@
   margin-left: auto;
   margin-right: auto;
 }
-.lh42{
+
+.lh42 {
   line-height: 42px;
 }
-.slide{
+
+.slide {
   width: 100%;
   height: 300px;
-  overflow: hidden; 
+  overflow: hidden;
 }
-.slide image{
+
+.slide image {
   width: 100%;
   position: relative;
   top: -80%;
 }
 
 /*Component Profile*/
-.profile{
+.profile {
   width: 100%;
   height: auto;
   padding: 20px;
   text-align: center;
 }
-.profile img{
+
+.profile img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   margin-bottom: 20px;
   border: 6px solid rgba(0, 0, 0, .3);
 }
-.profileDetail{
+
+.profileDetail {
   width: 25%;
   height: auto;
   margin-left: auto;
   margin-right: auto;
 }
-.profile p{
+
+.profile p {
   color: #555;
 }
-.profile h4{
+
+.profile h4 {
   font-weight: 700;
 }
-.profileLeft{
+
+.profileLeft {
   width: 50%;
   height: auto;
   display: inline-block;
   vertical-align: middle;
   border-right: 2px solid #000;
 }
-.profileRight{
+
+.profileRight {
   width: 50%;
   height: auto;
   display: inline-block;

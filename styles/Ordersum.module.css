@@ -1,13 +1,13 @@
 .box {
-	width: 35%;
-	height: 230px;
+    width: 35%;
+    height: 230px;
     border-radius: 20px;
-	overflow: hidden;
+    overflow: hidden;
     padding-top: 10px;
-	margin-bottom: 10px;
-	background: #EBEBFA;
-	transition: all .6s ease;
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-bottom: 10px;
+    background: #EBEBFA;
+    transition: all .6s ease;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .name {
@@ -21,13 +21,17 @@
 }
 
 .total .price {
-    padding-left: 60%;
+    padding-left: 59%;
     position: fix;
+    position: relative;
+    display: inline-block;
 }
 
 .total .unit {
-    padding-left: 1%;
+    padding-left: 6%;
     position: fix;
+    position: relative;
+    display: inline-block;
 }
 
 .delivery {
@@ -37,13 +41,17 @@
 }
 
 .delivery .fee {
-    padding-left: 60%;
+    padding-left: 59%;
     position: fix;
+    position: relative;
+    display: inline-block;
 }
 
 .delivery .unit {
-    padding-left: 4%;
+    padding-left: 6%;
     position: fix;
+    position: relative;
+    display: inline-block;
 }
 
 .line {
@@ -59,10 +67,13 @@
 }
 
 .sum .price {
-    padding-left: 63%;
+    padding-left: 60%;
+    position: relative;
+    display: inline-block;
 }
 
 .sum .unit {
-    padding-left: 1%;
+    padding-left: 8%;
+    position: relative;
+    display: inline-block;
 }
-

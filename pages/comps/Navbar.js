@@ -78,7 +78,7 @@ export default function Navbar() {
         </li>
 
         <li className="list-inline-item">
-          <AccountMenu/>
+          <AccountMenu />
         </li>
       </div>
     </Nav>

@@ -10,8 +10,8 @@ const { Meta } = Card;
 export default function Home() {
   return (
     <main className={styles.main1}>
-      
-            <div>
+
+      <div>
         <Carousel autoplay className={styles.slide}>
           <div className={styles.contentStyle}>
             <img src="https://sasom.co.th/_next/image?url=https%3A%2F%2Fd2cva83hdk3bwc.cloudfront.net%2FHero_Banner_3_en.png&w=1920&q=75"></img>
@@ -35,10 +35,10 @@ export default function Home() {
             style={{ width: 300 }}
             cover={
               <Link href="/ProductCard?id=P0000007">
-              <img
-                alt="example"
-                src="https://cf.shopee.co.th/file/9b44066d2ddd6db2a39d0a9c2248b634"
-              />
+                <img
+                  alt="example"
+                  src="https://cf.shopee.co.th/file/9b44066d2ddd6db2a39d0a9c2248b634"
+                />
               </Link>
             }
           >
@@ -49,10 +49,10 @@ export default function Home() {
             style={{ width: 300 }}
             cover={
               <Link href="/ProductCard?id=P0000008">
-              <img
-                alt="example"
-                src="https://cf.shopee.co.th/file/77ae064ea246fbeba9b64f4faa4d0ff7"
-              />
+                <img
+                  alt="example"
+                  src="https://cf.shopee.co.th/file/77ae064ea246fbeba9b64f4faa4d0ff7"
+                />
               </Link>
             }
           >
@@ -63,30 +63,30 @@ export default function Home() {
             style={{ width: 300 }}
             cover={
               <Link href="/ProductCard?id=P0000009">
-              <img
-                alt="example"
-                src="https://cf.shopee.co.th/file/4bd5094d47d3922fb1131efb8b1fdaef"
-              />
+                <img
+                  alt="example"
+                  src="https://cf.shopee.co.th/file/4bd5094d47d3922fb1131efb8b1fdaef"
+                />
               </Link>
             }
           >
-            <Meta title="Air Jordan 1 Retro High OG Sail" description="5800 ฿"/>
+            <Meta title="Air Jordan 1 Retro High OG Sail" description="5800 ฿" />
           </Card>
         </div>
         <div className={styles.new}>
-        <button className={styles.view} type="button">
-              View More
-            </button> 
+          <button className={styles.view} type="button">
+            View More
+          </button>
         </div>
         <div>
-            <div className={styles.our}>
-                <a href="#"><img src="https://i.pinimg.com/736x/2c/a0/2a/2ca02a6531b013f104bafa55061882b4.jpg"></img></a>
-                <div className={styles.center}>Our Story</div>
-            </div>
-            <div className={styles.our}>
-                <a href="#"><img src="https://i.pinimg.com/736x/2c/a0/2a/2ca02a6531b013f104bafa55061882b4.jpg"></img></a>
-                <div className={styles.center}>Our Blog</div>
-            </div>
+          <div className={styles.our}>
+            <a href="#"><img src="https://i.pinimg.com/736x/2c/a0/2a/2ca02a6531b013f104bafa55061882b4.jpg"></img></a>
+            <div className={styles.center}>Our Story</div>
+          </div>
+          <div className={styles.our}>
+            <a href="#"><img src="https://i.pinimg.com/736x/2c/a0/2a/2ca02a6531b013f104bafa55061882b4.jpg"></img></a>
+            <div className={styles.center}>Our Blog</div>
+          </div>
         </div>
       </div>
     </main>

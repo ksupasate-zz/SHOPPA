@@ -12,14 +12,14 @@ export default function login(req, res) {
     const data = req.body.data
     console.log(data)
     db.query(
-        'SELECT Member_ID FROM `Members` WHERE `Member_Email` = ? AND `Member_Password` = ?', [data.Email , data.Password],
+        'SELECT Member_ID FROM `Members` WHERE `Member_Email` = ? AND `Member_Password` = ?', [data.Email, data.Password],
         function (err, results) {
-            if(results[0]){
-                res.status(200).json({check : "Member" , id : results[0].Member_ID})
-            }else{
-                res.status(200).json({check : "Can't Login"})
+            if (results[0]) {
+                res.status(200).json({ check: "Member", id: results[0].Member_ID })
+            } else {
+                res.status(200).json({ check: "Can't Login" })
             }
-       }
+        }
     );
 }
 /*

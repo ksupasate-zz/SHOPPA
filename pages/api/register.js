@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 const mysql = require('mysql2');
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     database: process.env.DB_DATABASE,
@@ -15,12 +15,12 @@ export default function register(req, res) {
         'SELECT COUNT(Admin_id) AS count FROM `Admin` WHERE Admin_Email = ?', [data.Email],
         function (err, results) {
             // res.status(200).json(results)
-            if(results[0].count > 0){
-                res.status(200).send({message : "Email is already used"})
+            if (results[0].count > 0) {
+                res.status(200).send({ message: "Email is already used" })
                 // console.log("Email is already used")
             }
             console.log("Email is okay"); // results contains rows returned by server
-       }
+        }
     );
 
     // Run MemberID
@@ -42,7 +42,7 @@ export default function register(req, res) {
                 [FinalMember_ID, Role_ID, Rank_ID, data.FName, data.LName, data.Email, data.Phone, data.ConPassword, data.Address, data.FName, data.Gender, data.DOB],
                 function (err, results) {
                     if (results) {
-                        res.status(200).json({message : "Success" , id : FinalMember_ID})
+                        res.status(200).json({ message: "Success", id: FinalMember_ID })
                         console.log("Inserted"); // results contains rows returned by server
                         // console.log(results)
                     } else {

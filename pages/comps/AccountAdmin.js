@@ -7,6 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
+import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
@@ -19,36 +20,33 @@ export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const Router = useRouter();
   const open = Boolean(anchorEl);
- 
-  const [cookies, setCookie , removeCookie] = useCookies(['Member' , 'Admin']);
+  const [cookies, setCookie, removeCookie] = useCookies(['Member', 'Admin']);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
-  function signout(){
-    removeCookie('Member' , {path : '/'})
-    Router.push('#', {shallow:true})
+  function signout() {
+    removeCookie('Member', { path: '/' })
+    Router.push('#', { shallow: true })
     console.log("Logout")
-
-    
-}
+  }
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        
-          <IconButton
-            onClick={handleClick}
-            size="small"
-            sx={{ ml: 2 }}
-            aria-controls={open ? 'account-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}
-          >
-            <Avatar sx={{ width: 40, height: 40 }}>M</Avatar>
-          </IconButton>
-       
+
+        <IconButton
+          onClick={handleClick}
+          size="small"
+          sx={{ ml: 2 }}
+          aria-controls={open ? 'account-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+        >
+          <Avatar sx={{ width: 40, height: 40 }}>M</Avatar>
+        </IconButton>
+
       </Box>
       <Menu
         anchorEl={anchorEl}
@@ -85,10 +83,10 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-          <a href="/profile">
-        <MenuItem>
-          <Avatar /> Profile
-        </MenuItem>
+        <a href="#">
+          <MenuItem>
+            <Avatar /> Profile
+          </MenuItem>
         </a>
         {/* <MenuItem>
           <Avatar /> My account
@@ -108,28 +106,36 @@ export default function AccountMenu() {
           Settings
         </MenuItem>
         <a href="/Ban" >
-        <MenuItem >
-          <ListItemIcon>
-            <Logout fontSize="small"  />
-          </ListItemIcon>
-          Ban Menu
-        </MenuItem>
+          <MenuItem >
+            <ListItemIcon>
+              <Logout fontSize="small" />
+            </ListItemIcon>
+            Ban Menu
+          </MenuItem>
         </a>
         <a href="/Fav" >
-        <MenuItem >
-          <ListItemIcon>
-            <FavoriteIcon fontSize="small"  />
-          </ListItemIcon>
-          Favorite Menu
-        </MenuItem>
+          <MenuItem >
+            <ListItemIcon>
+              <FavoriteIcon fontSize="small" />
+            </ListItemIcon>
+            Favorite Menu
+          </MenuItem>
+        </a>
+        <a href="/BillStatus" >
+          <MenuItem >
+            <ListItemIcon>
+              <ReceiptLongIcon fontSize="small" />
+            </ListItemIcon>
+            Bill
+          </MenuItem>
         </a>
         <a href="/" onClick={signout}>
-        <MenuItem >
-          <ListItemIcon>
-            <Logout fontSize="small"  />
-          </ListItemIcon>
-          Logout
-        </MenuItem>
+          <MenuItem >
+            <ListItemIcon>
+              <Logout fontSize="small" />
+            </ListItemIcon>
+            Logout
+          </MenuItem>
         </a>
       </Menu>
     </React.Fragment>

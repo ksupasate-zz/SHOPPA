@@ -9,26 +9,26 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Link from "next/link";
 
-export default function Image123({id}) {
+export default function Image123({ id }) {
     return (
         <div >
             <div className={styles.space1} >
 
                 <IconButton aria-label="VisibilityIcon" >
-                <Link href={"/Profile?id="+id}>
-                    <VisibilityIcon />
+                    <Link href={"/Profile?id=" + id}>
+                        <VisibilityIcon />
                     </Link>
                 </IconButton>
             </div>
             <IconButton aria-label="EditIconn">
-            <Link href={"/BanForm?id="+id }>
+                <Link href={"/BanForm?id=" + id}>
                     <EditIcon />
-                    </Link>
-                </IconButton>
+                </Link>
+            </IconButton>
             <div className={styles.space2}>
-            <IconButton aria-label="DeleteIcon">
-            <Link href={"/Delete?id="+id}>
-                    <DeleteIcon />
+                <IconButton aria-label="DeleteIcon">
+                    <Link href={"/Delete?id=" + id}>
+                        <DeleteIcon />
                     </Link>
                 </IconButton>
             </div>

@@ -4,8 +4,24 @@ import Link from "next/link";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import AccountMenu from "./Account";
+import AccountMenu from "./AccountAdmin";
+import { useCookies } from "react-cookie"
+import { useState, useEffect } from "react";
 export default function Navbar() {
+  const [cookies, setCookie, removeCookie] = useCookies(['Admin']);
+  if (cookies['Admin']) {
+    const data = cookies['Admin']
+  }
+  const [profileDetail, setProfileDetail] = useState([]);
+  React.useEffect(() => {
+    fetch('/api/profileAdmin/' + data).then((res) => {
+      return res.json()
+    }).then((data) => {
+      console.log(data)
+      setProfileDetail(data)
+    })
+  }, []);
+  console.log(cookies['Admin'])
   return (
     <Nav className="nav justify-content-center text-center mb-3 mt-3">
       <div className="w-25">
@@ -45,15 +61,15 @@ export default function Navbar() {
       <div className="w-50">
       </div>
       <div className="w-25">
-      <li className="list-inline-item">
+        <li className="list-inline-item">
           <Link href="/Profile">
             <a className="nav-link text-black">
-              <div>Narith Thanomsup</div>
+              <div>{(profileDetail.length > 0) ? profileDetail[0].Admin_FName + " " + profileDetail[0].Admin_LName : ''}</div>
             </a>
           </Link>
         </li>
         <li className="list-inline-item">
-            <AccountMenu/>
+          <AccountMenu />
         </li>
       </div>
     </Nav>

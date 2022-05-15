@@ -5,14 +5,14 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function BasicSelectProduct({banid}) {
+export default function BasicSelectProduct({ banid }) {
   const [category, setCategory] = React.useState('');
 
   const handleChange = (event) => {
     setCategory(event.target.value);
   };
 
-const [log, setlog] = React.useState([]);
+  const [log, setlog] = React.useState([]);
   React.useEffect(() => {
     fetch('/api/Log')
       .then((res) => res.json())
@@ -33,8 +33,8 @@ const [log, setlog] = React.useState([]);
           onChange={handleChange}
         >
           {log.map((row, i) => (
-                  <MenuItem value ={i+1}>{row.LogCase_Detail}</MenuItem>
-                  ))} 
+            <MenuItem value={i + 1}>{row.LogCase_Detail}</MenuItem>
+          ))}
         </Select>
       </FormControl>
     </Box>
