@@ -12,6 +12,7 @@ export default function Fav(req, res) {
                 res.status(200).json(result);
                 
             } else {
+                console.log(result);
                 res.status(200).json(result);
             }
         });

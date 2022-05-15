@@ -262,6 +262,16 @@
   position: relative;
 }
 
+.card1 {
+  display:inline-block;
+  margin-left: 6.55%;
+  margin-right: 6.55%;
+  margin-bottom: 2%;
+  width: 33%;
+  float: left;
+  object-fit: cover;
+  position: relative;
+}
 .view {
   border-radius: 50px;
   width: 160px;

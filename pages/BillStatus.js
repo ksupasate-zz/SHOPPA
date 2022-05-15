@@ -35,13 +35,13 @@ export default function TableBillStatus() {
   }, [])
 
  function change(_id){
+   alert("55555 ")
   if(confirm("Change Bill Status?")){
-    fetch('/api/BillLog/'+_id)
+    fetch('/api/BillLog'+_id)
     .then((res) => res.json())
     .then((result) => {
-      //setrows(result)
+      setrows(result)
     })
-    window.location.href=window.location.href
 }
   else{
 
@@ -85,7 +85,7 @@ export default function TableBillStatus() {
                    <TableCell align="left">{i+1}</TableCell>
                       <TableCell align="left">{row.Bill_ID}</TableCell>
                       <TableCell align="left">{row.Order_ID}</TableCell>
-                      <TableCell align="center" onClick={()=>change(row.Bill_ID)}>{<Op   />}</TableCell>
+                      <TableCell align="center" onClick={()=>change(row.Bill_ID)}><span  >{<Op   />}</span></TableCell>
                       <TableCell ><div className={(row.Bill_Status == '0') ? styles.status : styles.status1}>{(row.Bill_Status == '0') ? '0' : '1'}</div></TableCell>
                     </TableRow>
                   ))}
