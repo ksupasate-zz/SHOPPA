@@ -1,5 +1,4 @@
 import Head from "next/head"
-import Footer from "./comps/footer"
 import Navbar from "./comps/Navbar"
 import Profiles from "./comps/Profiles"
 import { useRouter } from 'next/router';
