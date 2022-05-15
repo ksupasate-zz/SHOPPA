@@ -19,6 +19,7 @@ export default function Home() {
         const data = cookies['Member']
     }
     const [profileDetail, setProfileDetail] = useState([]);
+    const [printWOW, setPrint] = useState("Print");
     useEffect(() => {
         fetch('/api/profile/' + data).then((res) => {
             return res.json()
@@ -52,36 +53,36 @@ export default function Home() {
                     <h2>ISSUES TO</h2>
                     <hr className={styles.hr_small} />
                     <div className={styles.puthfix}>
-                        <h3>COMPANY NAME</h3>
+                        <h4>COMPANY NAME</h4>
                     </div>
                     <p className={styles.info}>SHOPPA Co.Ltd.</p>
                     <hr className={styles.hr_invis} />
                     <div className={styles.puthfix}>
-                        <h3>ADDRESS</h3>
+                        <h4>ADDRESS</h4>
                     </div>
                     <p className={styles.info}>
                         126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok 10140, Thailand
                     </p>
                     <hr className={styles.hr_small} />
                     <div className={styles.puthfix}>
-                        <h3>BILL ID</h3>
+                        <h4>BILL ID</h4>
                     </div>
 
                     <p className={styles.info}>BL1234567</p>
                     <hr className={styles.hr_med} />
                     <div className={styles.puthfix}>
-                        <h3>DATE ISSUED</h3>
+                        <h4>DATE ISSUED</h4>
                     </div>
 
                     <p className={styles.info}>24 Oct, 2021</p>
                     <hr className={styles.hr_small} />
                     <div className={styles.puthfix}>
-                        <h3>DATE DUE</h3>
+                        <h4>DATE DUE</h4>
                     </div>
                     <p className={styles.info}>12 Nov, 2021</p>
                     <hr className={styles.hr_small} />
                     <div className={styles.puthfix}>
-                        <h3>CATEGORY</h3>
+                        <h4>CATEGORY</h4>
                     </div>
                     <p className={styles.info}>Shoes</p>
                 </div>
@@ -90,36 +91,36 @@ export default function Home() {
                     <h2>PAYABLE TO</h2>
                     <hr className={styles.hr_small} />
                     <div className={styles.puthfix}>
-                        <h3>CUSTOMER NAME</h3>
+                        <h4>CUSTOMER NAME</h4>
                     </div>
                     <p className={styles.info}>{profileDetail.length > 0 && profileDetail[0].Member_FName + " " + profileDetail[0].Member_LName}</p>
                     <hr className={styles.hr_invis} />
                     <div className={styles.puthfix}>
-                        <h3>PHONE</h3>
+                        <h4>PHONE</h4>
                     </div>
                     <p className={styles.info}>{profileDetail.length > 0 && profileDetail[0].Member_Telephone}</p>
                     <hr className={styles.hr_invis} />
 
                     <div className={styles.puthfix}>
-                        <h3>CUSTOMER ID</h3>
+                        <h4>CUSTOMER ID</h4>
                     </div>
                     <p className={styles.info}>{profileDetail.length > 0 && profileDetail[0].Member_ID}</p>
                     <hr className={styles.hr_invis} />
 
                     <div className={styles.puthfix}>
-                        <h3>BANK</h3>
+                        <h4>BANK</h4>
                     </div>
                     <p className={styles.info}>Kasikorn Bank</p>
                     <hr className={styles.hr_small} />
 
                     <div className={styles.puthfix}>
-                        <h3>BILL ID</h3>
+                        <h4>BILL ID</h4>
                     </div>
                     <p className={styles.info}>BL1234567</p>
                     <hr className={styles.hr_small} />
 
                     <div className={styles.puthfix}>
-                        <h3>ADDRESS</h3>
+                        <h4>ADDRESS</h4>
                     </div>
                     <p className={styles.info}>
                         {profileDetail.length > 0 && profileDetail[0].Member_Address}
@@ -134,44 +135,42 @@ export default function Home() {
                         <Table sx={{ minWidth: 700 }} aria-label="spanning table">
                             <TableHead>
                             <TableRow>
-                                <TableCell align="center" colSpan={4}>
+                                <TableCell align="center" colSpan={5}>
                                 Details
                                 </TableCell>
-                                <TableCell align="right">Price</TableCell>
+                                <TableCell align="right" colSpan={3}>Price</TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell>Description</TableCell>
-                                <TableCell align="right"></TableCell>
-                                <TableCell align="left">Price</TableCell>
-                                <TableCell align="center">Quantity</TableCell>
-                                <TableCell align="right">Sum</TableCell>
+                                <TableCell colSpan={1}>Description</TableCell>
+                                <TableCell colSpan={5} align="center">Quantity</TableCell>
+                                <TableCell colSpan={2}align="right">Sum</TableCell>
                             </TableRow>
                             </TableHead>
                             <TableBody>
                             {(cart) && cart.map((row, i) => (
-                                <TableRow key={i}>
-                                <TableCell></TableCell>
-                                <TableCell align="right">{row.name}</TableCell>
-                                <TableCell align="left">{row.qty}</TableCell>
-                                <TableCell align="center">THB</TableCell>
-                                <TableCell align="right">{row.price}</TableCell>
+                                <TableRow rowSpan={1} key={i}>
+                                <TableCell colSpan={1} align="left">{row.name}</TableCell>
+                                <TableCell colSpan={5} align="center">{row.qty}</TableCell>
+                                <TableCell colSpan={2} align="right">{row.price}</TableCell>
                                 </TableRow>
                             ))}
+                            </TableBody>
                             <TableRow>
-                                <TableCell rowSpan={4} />
-                                <TableCell colSpan={3}>Subtotal</TableCell>
+                                
+                                <TableCell colSpan={6} ></TableCell>
+                                <TableCell colSpan={1} >Subtotal</TableCell>
                                 <TableCell align="right">{sum}</TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell >Tax</TableCell>
-                                <TableCell align="left" colSpan={2}>7%</TableCell>
+                                <TableCell colSpan={6}></TableCell>
+                                <TableCell align="left" colSpan={1}>Tax 7%</TableCell>
                                 <TableCell align="right">{sum * 0.07}</TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell colSpan={3}>Total</TableCell>
-                                <TableCell align="right">{sum + sum * 0.07}</TableCell>
+                                <TableCell colSpan={6}></TableCell>
+                                <TableCell align="left" colSpan={1}>Total</TableCell>
+                                <TableCell colSpan={3} align="right">{sum + sum * 0.07}</TableCell>
                             </TableRow>
-                            </TableBody>
                         </Table>
                         </TableContainer>
                     {/*  */}
@@ -187,7 +186,7 @@ export default function Home() {
                 <div className={styles.last_div + ' ' + styles.marRight}>
                     <hr className={styles.hr_small} />
                     <div className={styles.puthfix}>
-                        <h3>PHONE</h3>
+                        <h4>PHONE</h4>
                     </div>
                     <p className={styles.last_info}>095 472 9142</p>
                     <hr className={styles.hr_big} />
@@ -195,7 +194,7 @@ export default function Home() {
                 <div className={styles.last_div + ' ' + styles.marRight}>
                     <hr className={styles.hr_small} />
                     <div className={styles.puthfix}>
-                        <h3>EMAIL</h3>
+                        <h4>EMAIL</h4>
                     </div>
                     <p className={styles.last_info}>shoppa@shoppa.com</p>
                     <hr className={styles.hr_big} />
@@ -203,15 +202,17 @@ export default function Home() {
                 <div className={styles.last_div}>
                     <hr className={styles.hr_small} />
                     <div className={styles.puthfix}>
-                        <h3>WEBSITE</h3>
+                        <h4>WEBSITE</h4>
                     </div>
                     <p className={styles.last_info}>https://kmutt.in.th/Shoppa</p>
                     <hr className={styles.hr_big} />
                 </div>
+                {(printWOW)&&
+                <button onClick={() => {setPrint("");setTimeout(window.print,1)}}> {printWOW} </button>}
             </main>
 
             <footer className={styles.footer}></footer>
-            <button onClick={() => window.print()}> Print </button>
+            
 
         </div>
     )

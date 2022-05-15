@@ -28,7 +28,7 @@ export default function AccountMenu() {
     setAnchorEl(null);
   };
   function signout(){
-    removeCookie('Member' , {path : '/'})
+    removeCookie('Admin' , {path : '/'})
     Router.push('#', {shallow:true})
     console.log("Logout")
 

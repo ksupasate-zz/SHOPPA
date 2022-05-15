@@ -12,6 +12,7 @@ import { CreditCard, TransgenderTwoTone } from '@mui/icons-material';
 import PaymentMethod from "./comps/PaymentMethod";
 import { useCookies } from "react-cookie";
 import { useRouter } from "next/router";
+import BasicSelectBank from './comps/selectbankcomp';
 
 
 var clicks = 0;
@@ -28,16 +29,6 @@ export function minus() {
   document.getElementById("clicks").innerHTML = clicks;
 }
 
-export function buyMePlz(){
-  if(confirm("Are u sure about that")){
-    // alert("Yes")
-    
-    return window.open('/bill')
-    
-  }else{
-    // alert("NO")
-  }
-}
 
 export default function Cart() {
   const [cookies, setCookie, removeCookie] = useCookies(['Member', 'Cart']);
@@ -50,10 +41,11 @@ export default function Cart() {
   const [showModal, setShowModal] = useState(false);
   const cart = cookies['Cart']
   console.log(cart)
-  let a = 0, sum = 0
+  let a = 0, sum = 0, allqty = 0
   if (cookies['Cart']) {
     while (cookies['Cart'][a]) {
       sum += cookies['Cart'][a].price
+      allqty += cookies['Cart'][a].qty
       a++
     }
   }
@@ -72,6 +64,38 @@ export default function Cart() {
     })
   }, []);
   console.log(profileDetail)
+
+  const [CardNumber, setCardNumber] = useState(0);
+  const [BranchBank, setBranchBank] = useState(0);
+
+  function buyMePlz() {
+    // console.log(CardNumber)
+    // console.log(BranchBank)
+    if (confirm("Are u sure about that")) {
+      // alert("Yes")
+      const finaldata = {
+        CartItem: cookies['Cart'],
+        Member_ID: cookies['Member'],
+        Card_ID: CardNumber,
+        BranchBank_ID: BranchBank,
+        TotalAll: allqty,
+      }
+      // console.log(finaldata)
+      fetch('/api/order', {
+        method: 'POST',
+        body: JSON.stringify({ finaldata }),
+        headers: { 'Content-Type': 'application/json' },
+      }).then((res) => {
+        return res.json()
+      }).then((finaldata) => {
+        // removeCookie('Cart')
+        Router.push('/profile')
+      })
+    } else {
+      // alert("NO")
+    }
+  }
+
   return (
     <div>
       <div className={styles.bar}><Navbar /></div>
@@ -130,17 +154,17 @@ export default function Cart() {
           </div>
           <div className={stylesOrdersum.delivery}>
             <span>Delivery fee</span>
-            <span className={stylesOrdersum.fee}>{sum * 0.07}</span> <span className={stylesOrdersum.unit}>Bath</span>
+            <span className={stylesOrdersum.fee}>{(sum * 0.07).toFixed(0)}</span> <span className={stylesOrdersum.unit}>Bath</span>
           </div>
           <hr className={stylesOrdersum.line} />
           <div className={stylesOrdersum.sum}>
-            <span className={stylesOrdersum.price}>{sum + sum * 0.07}</span> <span className={stylesOrdersum.unit}>Bath</span>
+            <span className={stylesOrdersum.price}>{(sum + sum * 0.07).toFixed(0)}</span> <span className={stylesOrdersum.unit}>Bath</span>
           </div>
         </div>
 
         {/* PaymentMethod */}
-        <PaymentMethod />
-
+        <PaymentMethod setCardNumber={setCardNumber} />
+        <BasicSelectBank setBranchBank={setBranchBank} />
         {/* Select Address */}
         <div className={stylesSelectAddress.box}>
           <div className={stylesSelectAddress.address}>

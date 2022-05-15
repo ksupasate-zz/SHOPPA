@@ -1,6 +1,6 @@
 .box {
 	width: 35%;
-	height: 120px;
+	height: auto;
     border-radius: 20px;
 	overflow: hidden;
     padding-top: 10px;
@@ -20,6 +20,22 @@
     padding-left: 50%;
 }
 
+.boxy {
+	width: 35%;
+	height: auto;
+    border-radius: 20px;
+	overflow: hidden;
+    padding-top: 10px;
+	margin-bottom: 10px;
+	background: #EBEBFA;
+	transition: all .6s ease;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 20px;
+}
+
+.selectBank{
+    background-color:rgba(255,255,255,.8);
+}
 
 .visa {
     padding-top: 15px;

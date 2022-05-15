@@ -1,13 +1,33 @@
 import styles from '/styles/PaymentMethod.module.css';
 import Creditcard from './Creditcard'
 import React, { useEffect, useRef, useState } from "react";
-import { CreditCard } from '@mui/icons-material';
-export default function PaymentMethod() {
-  
+import { useRouter } from 'next/router';
+import { useCookies } from 'react-cookie';
+
+export default function PaymentMethod( {setCardNumber} ) {
+  const [cookies, setCookie , removeCookie] = useCookies(['Member']);
   const [showModal, setShowModal] = useState(false);
+  const router = useRouter()
+  let id
+  if(cookies['Member']){
+    id = cookies['Member']
+  }
+  // console.log("Member ID : "+id)
+  const [data, setdata] = React.useState({});
+  React.useEffect(() => {
+    fetch('/api/Credit/' + id)//ProductList+(id=P...)
+      .then((res) => res.json())
+      .then((result) => {
+        setdata(result)
+        console.log(data)
+      })
+  }, [id])
+  
+  if(data.length > 0 && setCardNumber){
+    setCardNumber(data[0].Card_ID)
+  }
 
   return (
-
     <div>
       <div className={styles.box}>
         <div className={styles.paymentmethod}>
@@ -22,7 +42,7 @@ export default function PaymentMethod() {
           </span>
         </div>
         <div className={styles.visa}>
-          <span>Visa</span> <span>12123***</span>
+          <span>Visa</span> <span>{(data.length > 0) ? data[0].Card_Number : ''}</span>
           <span className={styles.edit}><u>Edit</u></span>
         </div>
       </div>

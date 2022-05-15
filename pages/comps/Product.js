@@ -29,6 +29,7 @@ export function minus() {
 export function alert() {
   window.alert("Product");
 }
+
 export default function Home() {
   const router = useRouter()
   const { id } = router.query //fetch from url
@@ -44,7 +45,9 @@ export default function Home() {
       })
   }, [id])
 
-  const [cookies, setCookie, removeCookie] = useCookies(['Cart']);
+
+  const [cookies, setCookie, removeCookie] = useCookies(['Cart' , 'Member']);
+  
   // removeCookie('Cart')
   var x = []
   function addToCart() {
@@ -90,17 +93,19 @@ export default function Home() {
       <Navbar></Navbar>
       <section className={styles.topleft}>
         <h2>{(data.result) ? data.result[0].Product_Name : ''}</h2>
-        <h3>{(data.result) ? data.result[0].Product_Price : ''} à¸¿</h3>
+        <h3>{(data.result) ? data.result[0].Product_Price : ''} Bath</h3>
         <img
           className={styles.image}
           src={(data.result) ? data.result[0].Product_Image : ''}
-          alt="NikeDunkLow"
+          alt={(data.result) ? data.result[0].Product_Name : ''}
         />
         <article className={styles.btleft}>
           <textarea
             id="cm1"
             name="comment1"
+            disabled
             rows={5}
+            readOnly
             cols={29}
             value={(data.result2 && data.result2.length > 0) ? data.result2[0].Review_Comment : ''}
             defaultValue={""}
@@ -109,6 +114,7 @@ export default function Home() {
           <textarea
             id="cm2"
             name="comment2"
+            disabled
             rows={5}
             cols={29}
             value={(data.result2 && data.result2.length > 1) ? data.result2[1].Review_Comment : ''}
@@ -118,7 +124,7 @@ export default function Home() {
       </section>
       <aside className={styles.right}>
         <div className={styles.profile1}>
-          <Profile></Profile>
+          <Profile>{(data.result)?data.result[0].Member_ID: ''}</Profile>
         </div>
         <div className={styles.des}>
           <p className={styles.description}>Description</p>
