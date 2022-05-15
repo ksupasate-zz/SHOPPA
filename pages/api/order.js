@@ -49,9 +49,19 @@ export default function order(req, res) {
                                 db.query(
                                     'INSERT INTO `OrderItem`(`OrderItem_ID`, `Order_ID`, `Product_ID`, `OrderItem_Total`, `OrderItem_Price`) VALUES (?,?,?,?,?)',
                                     [FinalOrderItem_ID, FinalOrder_ID, data.CartItem[i].id, data.CartItem[i].qty, data.CartItem[i].price],
-                                    function (err, result2) {
-                                        console.log(err)
-                                    }
+                                    db.query(
+                                        'UPDATE `Product` SET Product_Quantity = Product_Quantity - ? , Product_Total = Product_Total + ? WHERE Product_ID = ?' , 
+                                        [data.CartItem[i].qty,data.CartItem[i].qty , data.CartItem[i].id], 
+                                       
+                                        db.query(
+                                            'UPDATE `Members` SET Member_Score = Member_Score + ? WHERE Member_ID = ?' , 
+                                            ['50', data.Member_ID], 
+                                            function (err, result2) {
+                                                console.log(Member_Score)
+                                            }
+                                        )
+                                    )
+                                    
                                 );
                                 newOrderItem_ID += 1
 
@@ -74,21 +84,23 @@ export default function order(req, res) {
                                     let Finaltemplate = "B00000000"
                                     let FinalBill_ID = Finaltemplate.substring(0, Finaltemplate.length - StringBill_ID.length) + StringBill_ID
                                     let Track = Math.floor(Math.random() * 9000000000) + 1000000000;
-                                    let FinalTrack = "TH"+Track.toString()
+                                    let FinalTrack = "TH" + Track.toString()
                                     db.query(
-                                        'INSERT INTO `Bill`(`Bill_ID`, `Order_ID`, `Bill_Track` , `Member_ID`) VALUES (?,?,?,?)',
-                                        [FinalBill_ID,FinalOrder_ID,FinalTrack,data.Member_ID],
+                                        'INSERT INTO `Bill`(`Bill_ID`, `Order_ID`, `Bill_Track`, `Member_ID`) VALUES (?,?,?,?)',
+                                        [FinalBill_ID, FinalOrder_ID, FinalTrack, data.Member_ID],
                                         function (err, Finally) {
                                             res.status(200).json(Finally)
                                         }
                                     );
                                 }
                             )
+
                         }
                     );
                 }
+
             );
-            res.status(404).json({message : "OH NO"})
+            res.status(404).json({ message: "OH NO" })
         }
     )
 }

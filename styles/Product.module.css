@@ -19,7 +19,7 @@
   width: auto;
   height: auto;
   float: right;
-  margin-right: 5rem;
+  margin-right: 3rem;
   clear: both;
   margin-bottom: 2rem;
 }
@@ -32,6 +32,19 @@
   position: relative;
   clear: both;
   float: left;
+}
+
+.textarea {
+  resize: none;
+}
+
+.cm {
+  display: inline-flex;
+  font-weight: bold;
+}
+
+.cm1 {
+  margin-right: 9.55rem;
 }
 
 .space {
@@ -60,14 +73,14 @@
 }
 
 .description {
-  margin-top: 20px;
+  margin-top: 5%;
   font-weight: bolder;
   text-align: center;
 }
 
 .desbox {
   width: 280px;
-  height: 190px;
+  height: 162px;
   overflow-y: scroll;
   clear: both;
 }

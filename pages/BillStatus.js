@@ -86,7 +86,7 @@ export default function TableBillStatus() {
                           <TableCell align="left">{row.Bill_ID}</TableCell>
                           <TableCell align="left">{row.Order_ID}</TableCell>
                           <TableCell align="center" onClick={() => change(row.Bill_ID)}>{<Op />}</TableCell>
-                          <TableCell ><div className={(row.Bill_Status == '0') ? styles.status : styles.status1}>{(row.Bill_Status == '0') ? '0' : '1'}</div></TableCell>
+                          <TableCell ><div className={(row.Bill_Status == '0') ? styles.status1 : styles.status}>{(row.Bill_Status == '0') ? 'Pending...' : 'Success!!!'}</div></TableCell>
                         </TableRow>
                       ))}
                   </TableBody>

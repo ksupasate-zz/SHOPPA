@@ -41,7 +41,7 @@ export default function login() {
         <main className={styles.main}>
             <Card style={{ maxWidth: 450, margin: "0 auto", padding: "20px 5px" }} >
                 <CardContent >
-                    <Typography gutterBottom variant="h4">Login Admin</Typography>
+                    <Typography gutterBottom variant="h4">Admin</Typography>
                     <form onSubmit={clickMe} action="" method="post">
 
 
@@ -53,9 +53,9 @@ export default function login() {
                                 <TextField type="password" name="password" label="Password" placeholder="Enter password" variant="outlined" fullWidth required />
                             </Grid>
                             <Grid xs={12} item>
-                                <Link href="/register" replace>
+                                {/* <Link href="/register" replace>
                                     <a>Register</a>
-                                </Link>
+                                </Link> */}
                             </Grid>
                             <Grid xs={12} item>
                                 <ThemeProvider theme={theme}>

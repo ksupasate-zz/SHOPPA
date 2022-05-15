@@ -50,18 +50,13 @@ export default function apiUpProduct(req, res) {
         function (_err, _results) {
           console.log(_err);
           console.log("ASD");
-          
-        //   fs.mkdir(
-        //     `./public/product/${timeStamp}`,
-        //     { recursive: true },
-        //     function (_err) {
-        //       return console.log(_err);
-        //     }
-        //   );
-    //       const data2 = fs.readFileSync(upproduct.productImage);
-    //   fs.writeFileSync(`./public/product/${timeStamp}`, data2);
-    //   fs.unlinkSync(upproduct.productImage);
-          // console.log(results); // results contains rows returned by server
+          db.query(
+            'UPDATE `Members` SET Member_Score = Member_Score + ? WHERE Member_ID = ?',
+            ['50', upproduct.MemberID],
+            function (err, result2) {
+              res.status(200).json({ id: FinalProduct_ID, message: "Success" })
+            }
+          )
         }
       );
     }

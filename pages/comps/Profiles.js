@@ -129,7 +129,7 @@ export default function Profile() {
                                                     {i + 1}
                                                 </TableCell>
                                                 <TableCell align="center">{row.Bill_ID}</TableCell>
-                                                <TableCell align="center">{row.Bill_Date}</TableCell>
+                                                <TableCell align="center">{row.Bill_Date.substr(0,10)}</TableCell>
                                                 <TableCell align="center" ><Link href={"/bill?id=" + row.Bill_ID}  ><InfoOutlinedIcon sx={{cursor:'pointer'}}/></Link></TableCell>
                                             </TableRow>
                                         ))}
@@ -143,7 +143,6 @@ export default function Profile() {
              {(profileProduct.length > 0) ?
                  profileProduct.map((row, i) => (
                     <div>
-                        <br />
                         <Link href={"/ProductCard?id=" + row.Product_ID}>
                             <Card
                                 className={styles.card1}

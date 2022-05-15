@@ -93,12 +93,17 @@ export default function Home() {
       <Navbar></Navbar>
       <section className={styles.topleft}>
         <h2>{(data.result) ? data.result[0].Product_Name : ''}</h2>
-        <h3>{(data.result) ? data.result[0].Product_Price : ''} Bath</h3>
+        <h5>{(data.result) ? data.result[0].Product_Price : ''} Bath</h5>
         <img
           className={styles.image}
           src={(data.result) ? data.result[0].Product_Image : ''}
           alt={(data.result) ? data.result[0].Product_Name : ''}
         />
+        <div className={styles.cm}>
+        <p className={styles.cm1}>Comment 1</p>
+        <p>Comment 2</p>
+        </div>
+        <br></br>
         <article className={styles.btleft}>
           <textarea
             id="cm1"
@@ -165,7 +170,7 @@ export default function Home() {
             </Stack>
 
           </div>
-          <br></br><h4>Quantity : {(data.result) ? data.result[0].Product_Quantity : ''} </h4>
+          <br></br><h5>Quantity : {(data.result) ? data.result[0].Product_Quantity : ''} </h5>
         </div>
       </aside>
     </main>

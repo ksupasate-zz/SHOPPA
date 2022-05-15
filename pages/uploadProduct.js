@@ -4,6 +4,7 @@ import BasicSelect from "./comps/selectCate";
 import * as React from "react";
 import { useCallback } from "react";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 import {
     CardContent,
@@ -16,40 +17,60 @@ import {
 } from "@mui/material";
 import { Component } from "react";
 import { useCookies } from "react-cookie";
+import { Rule } from "@mui/icons-material";
 
 
 
 export default function register() {
     const [cookies, setCookie, removeCookie] = useCookies(['Member', 'Cart']);
-    const clickMe = useCallback((e) => {
-        e.preventDefault();
-        console.log(e);
-
-        const upproduct = {
-            productName: e.target[0].value,
-            productDetail: e.target[4].value,
-            productImage: e.target[2].value,
-            productCategory: e.target[7].value,
-            productQuantity: e.target[9].value,
-            productPrice: e.target[11].value,
-            MemberID: cookies['Member'],
-        };
-        // const puth = upproduct
+    const [Path , setPath] = useState("");
+    const [PID , setPID] = useState([]);
+    const Router = useRouter();
+    const uploadToServer = async (event) => {
         const body = new FormData();
-        body.append("file", upproduct.productImage);
-        console.log(upproduct);
-        fetch("/api/api_product", {
+        body.append("file", image);
+        console.log(body);
+        fetch("../api/upload", {
             method: "POST",
-            body: JSON.stringify({ upproduct }),
-            headers: { "Content-Type": "application/json" },
+            body,
         })
             .then((res) => {
                 return res.json();
             })
-            .then((upproduct) => {
-                alert(upproduct.message);
-                console.log(upproduct.message);
+            .then((data) => {
+                console.log(data.path, "EIEIEIEIEIEI");
+                setPath(data.path)
             });
+    };
+    const clickMe = useCallback((e) => {
+        e.preventDefault();
+        console.log(e);
+            const upproduct = {
+                productName: e.target[0].value,
+                productDetail: e.target[4].value,
+                productImage: Path,
+                productCategory: e.target[7].value,
+                productQuantity: e.target[9].value,
+                productPrice: e.target[11].value,
+                MemberID: cookies['Member'],
+            };
+            // const puth = upproduct
+            const body = new FormData();
+            body.append("file", upproduct.productImage);
+            console.log(upproduct);
+            fetch("/api/api_product", {
+                method: "POST",
+                body: JSON.stringify({ upproduct }),
+                headers: { "Content-Type": "application/json" },
+            })
+                .then((res) => {
+                    return res.json();
+                })
+                .then((upproduct) => {
+                    alert(upproduct.message);
+                    console.log(upproduct.message);
+                    setPID(upproduct.id)
+                });
     }, []);
 
     const [image, setImage] = useState(null);
@@ -63,22 +84,24 @@ export default function register() {
             setCreateObjectURL(URL.createObjectURL(i));
         }
     };
-
-    const uploadToServer = async (event) => {
-        const body = new FormData();
-        body.append("file", image);
-        console.log(body);
-        fetch("../api/upload", {
+    //uploadProduct.js + upload.js + api_product.js + changeImg
+    if(Path && PID){
+        const changeProduct ={
+            Product_Image : Path,
+            Product_ID : PID,
+        }
+        fetch("/api/changeImg", {
             method: "POST",
-            body,
+            body: JSON.stringify({ changeProduct }),
+            headers: { "Content-Type": "application/json" },
         })
             .then((res) => {
                 return res.json();
             })
-            .then((data) => {
-                console.log(data, "EIEIEIEIEIEI");
+            .then((_data) => {
+                console.log(_data)
             });
-    };
+    }
 
     return (
         <main className={styles.main}>
@@ -172,11 +195,11 @@ export default function register() {
                             <Grid xs={12} item>
                                 <ThemeProvider theme={theme}>
                                     <Button
-                                        onClick={uploadToServer}
                                         type="submit"
                                         variant="contained"
                                         color="neutral"
                                         fullWidth
+                                        onClick={uploadToServer}
                                     >
                                         Submit
                                     </Button>

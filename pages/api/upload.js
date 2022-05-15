@@ -15,7 +15,7 @@ const post = async (req, res) => {
   const form = new formidable.IncomingForm();
   form.parse(req, async function (err, fields, files) {
     const path = await saveFile(files.file)
-    console.log(path)
+    // console.log(path)
     return res.status(201).json({path});
   });
 };
@@ -26,7 +26,7 @@ const saveFile = async (file) => {
     const unee = `./public/product/${timeStamp}${file.originalFilename}`
     fs.writeFileSync(unee, data);
     await fs.unlinkSync(file.filepath);
-    return unee;
+    return "product/"+timeStamp+file.originalFilename;
   };
 
 export default  post

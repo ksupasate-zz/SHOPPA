@@ -1,6 +1,6 @@
 .box {
     width: 35%;
-    height: 230px;
+    height: 190px;
     border-radius: 20px;
     overflow: hidden;
     padding-top: 10px;
@@ -11,12 +11,13 @@
 }
 
 .name {
-    padding-top: 20px;
+    padding-top: 10px;
     padding-left: 20px;
+    font-weight: 700;
 }
 
 .total {
-    padding-top: 30px;
+    padding-top: 20px;
     padding-left: 20px;
 }
 
@@ -37,11 +38,11 @@
 .delivery {
     padding-top: 15px;
     padding-left: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .delivery .fee {
-    padding-left: 59%;
+    padding-left: 57.5%;
     position: fix;
     position: relative;
     display: inline-block;

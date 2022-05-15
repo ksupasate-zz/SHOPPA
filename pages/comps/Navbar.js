@@ -21,6 +21,9 @@ export default function Navbar() {
         .list-inline-item {
           line-height: 27px;
         }
+        .list-inline-item:hover {
+          font-weight: 600;
+        }
         li {
           text-align: center;
         }
