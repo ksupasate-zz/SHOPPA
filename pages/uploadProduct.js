@@ -15,9 +15,12 @@ import {
     Typography,
 } from "@mui/material";
 import { Component } from "react";
+import { useCookies } from "react-cookie";
+
 
 
 export default function register() {
+    const [cookies, setCookie, removeCookie] = useCookies(['Member', 'Cart']);
     const clickMe = useCallback((e) => {
         e.preventDefault();
         console.log(e);
@@ -29,6 +32,7 @@ export default function register() {
             productCategory: e.target[7].value,
             productQuantity: e.target[9].value,
             productPrice: e.target[11].value,
+            MemberID: cookies['Member'],
         };
         // const puth = upproduct
         const body = new FormData();

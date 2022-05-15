@@ -36,9 +36,10 @@ export default function apiUpProduct(req, res) {
         StringProduct_ID;
       // console.log(FinalMember_ID)
       db.query(
-        'INSERT INTO `Product`(`Product_ID`, `Member_ID`, `Category_ID`, `Product_Image`, `Product_Name`, `Product_Detail`, `Product_Total`, `Product_Price`, `Product_Quantity`) VALUES (?,"M0000002",?,?,?,?,0,?,?)',
+        'INSERT INTO `Product`(`Product_ID`, `Member_ID`, `Category_ID`, `Product_Image`, `Product_Name`, `Product_Detail`, `Product_Total`, `Product_Price`, `Product_Quantity`) VALUES (?,?,?,?,?,?,0,?,?)',
         [
           FinalProduct_ID,
+          upproduct.MemberID,
           upproduct.productCategory,
           upproduct.productImage,
           upproduct.productName,

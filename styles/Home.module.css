@@ -271,9 +271,23 @@
   width: 33%;
   float: left;
   object-fit: cover;
+  position: relative; 
+}
+.card1 {
+  display: inline-block;
+  margin-left: 6.55%;
+  margin-right: 6.55%;
+  margin-bottom: 2%;
+  text-align: center;
+  width: 33%;
+  float: left;
+  object-fit: cover;
   position: relative;
 }
-
+.card1 img {
+  margin-left: auto;
+  margin-right: auto;
+}
 .view {
   border-radius: 50px;
   width: 160px;

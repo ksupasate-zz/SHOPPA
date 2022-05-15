@@ -8,7 +8,7 @@ const db = mysql.createPool({
 export default function Pro(req, res) {
   var { img } = req.query;
   db.query(
-    "SELECT Product_ID,Member_ID,Category_ID,Product_Image,Product_Name,Product_Detail,Product_Total,Product_Price,Product_Quantity FROM Product WHERE Category_ID = ? ",
+    "SELECT Product_ID,Member_ID,Category_ID,Product_Image,Product_Name,Product_Detail,Product_Total,Product_Price,Product_Quantity FROM Product WHERE Category_ID = ? AND Product_Quantity > 0",
     [img],
     (err, result) => {
       if (err) {

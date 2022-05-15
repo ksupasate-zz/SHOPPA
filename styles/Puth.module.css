@@ -1,0 +1,130 @@
+.table{
+    border-bottom: 1px solid;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .right{
+    text-align: right;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+  
+  .hr_big{
+    border-style: none;
+    border-top: 5px solid black;
+    clear: left;
+    opacity: 1;
+  }
+  
+  .hr_med{
+    border-style: none;
+    border-top: 3px solid;
+    clear: left;
+    opacity: 1;
+  }
+  
+  .hr_small{
+    border-style: none;
+    border-top: 1px solid;
+    clear: left;
+    opacity: 1;
+  }
+  
+  .hr_invis{
+    border-style: none;
+    clear: left;
+    opacity: 0;
+  }
+  
+  
+  .half_left_div{
+    width: 48.5%;
+    float: left;
+    margin-right: 1.5%;
+    word-wrap: break-word;
+    position: relative;
+    height: auto;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+  
+  .half_right_div{
+    width: 48.5%;
+    float: left;
+    word-wrap: break-word;
+    margin-left: 1.5%;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+  
+  .bottom_div{
+    clear: left;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+  
+  .DESCRIPTION{
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+  
+  .mid{
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+  
+  .info{
+    width: 100%;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+  .puthfix{
+    width: 190px;
+    float: left;
+    position: relative;
+    top: -10px;
+    height: 50px;
+    
+  }
+  
+  .right{
+  
+  }
+  
+  .nineteen{
+    width: 90%;
+    align: right;
+  }
+  
+  .last_div{
+    width: 31.333%;
+    float: left;
+    word-wrap: break-word;
+  }
+  
+  .last_info{
+    text-align: right;
+  }
+  
+  .marRight{
+    margin-right: 3%;
+  }
+  
+  
+  .floatLeft{
+    float: left;
+    margin-right: 4%;
+  }
+  
+  
+  .main {
+  padding: 0;
+  margin-left: 3%;
+  margin-right: 3%;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }

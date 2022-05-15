@@ -74,29 +74,21 @@ export default function order(req, res) {
                                     let Finaltemplate = "B00000000"
                                     let FinalBill_ID = Finaltemplate.substring(0, Finaltemplate.length - StringBill_ID.length) + StringBill_ID
                                     let Track = Math.floor(Math.random() * 9000000000) + 1000000000;
-                                    let FinalTrack = "TH" + Track.toString()
+                                    let FinalTrack = "TH"+Track.toString()
                                     db.query(
-                                        'INSERT INTO `Bill`(`Bill_ID`, `Order_ID`, `Bill_Track`) VALUES (?,?,?)',
-                                        [FinalBill_ID, FinalOrder_ID, FinalTrack],
-
-                                        // db.query(
-                                        //     'UPDATE `Product` SET Product_Quantity = Product_Quantity - ? WHERE Product_ID = ?',
-                                        //     [data.CartItem[i].qty, data.CartItem[i].id],
-                                        //     function (err, Finally) {
-                                        //         res.status(200).json(Finally)
-                                        //         console.log(Finally)
-                                        //     }
-                                        // )
+                                        'INSERT INTO `Bill`(`Bill_ID`, `Order_ID`, `Bill_Track` , `Member_ID`) VALUES (?,?,?,?)',
+                                        [FinalBill_ID,FinalOrder_ID,FinalTrack,data.Member_ID],
+                                        function (err, Finally) {
+                                            res.status(200).json(Finally)
+                                        }
                                     );
+                                }
+                            )
                         }
-                    )
-
+                    );
                 }
             );
+            res.status(404).json({message : "OH NO"})
         }
-
-    );
-    res.status(404).json({ message: "OH NO" })
-}
     )
 }
