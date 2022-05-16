@@ -63,7 +63,7 @@ export default function Cart() {
       setProfileDetail(data)
     })
   }, []);
-  console.log(profileDetail)
+  // console.log(profileDetail)
 
   const [CardNumber, setCardNumber] = useState(0);
   const [BranchBank, setBranchBank] = useState(0);
@@ -73,6 +73,7 @@ export default function Cart() {
     // console.log(BranchBank)
     if (confirm("Are u sure about that")) {
       // alert("Yes")
+      console.log("Card Number : " + CardNumber)
       const finaldata = {
         CartItem: cookies['Cart'],
         Member_ID: cookies['Member'],
