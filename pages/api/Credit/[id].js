@@ -11,7 +11,7 @@ export default function showCredit(req, res) {
   var id = req.query;
   console.log(id)
   db.query(
-    'SELECT Card_Number FROM `Payment_Card` WHERE `Member_ID` = ?', [id.id],
+    'SELECT Card_Number , Card_ID FROM `Payment_Card` WHERE `Member_ID` = ?', [id.id],
     (err, result) => {
       if (err) {
         console.log(err);
