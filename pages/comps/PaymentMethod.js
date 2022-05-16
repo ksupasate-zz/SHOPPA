@@ -19,13 +19,10 @@ export default function PaymentMethod({ setCardNumber }) {
       .then((res) => res.json())
       .then((result) => {
         setdata(result)
-        console.log(data)
+        setCardNumber(result[0].Card_ID)
       })
   }, [id])
 
-  if (data.length > 0 && setCardNumber) {
-    setCardNumber(data[0].Card_ID)
-  }
 
   return (
     <div>
@@ -42,7 +39,7 @@ export default function PaymentMethod({ setCardNumber }) {
           </span>
         </div>
         <div className={styles.visa}>
-          <span>Visa</span> <span>{(data.length > 0) ? data[0].Card_Number : ''}</span>
+          <span>Visa</span> <span>{(data.length > 0) ?data[0].Card_Number: ''}</span>
           <span className={styles.edit}><u>Edit</u></span>
         </div>
       </div>
